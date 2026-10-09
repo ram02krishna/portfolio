@@ -7,8 +7,9 @@ import {
   Zap,
   Briefcase,
   Calendar,
-  MapPin,
+  Globe,
   CheckCircle2,
+  Database,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -26,7 +27,7 @@ const terminalLines = [
   { text: "ram_krishna  →  sde, backend & devops engineer", type: "out" },
   { prefix: "$", text: "cat experience.txt", type: "cmd" },
   {
-    text: "✔  Software Development Intern @ Simphy Softwares Pvt. Ltd. (3 months)",
+    text: "✔  SDE Intern – Backend @ Simphy Softwares Pvt. Ltd. (Jun 2026 – Aug 2026 · Remote)",
     type: "out-green",
   },
   { prefix: "$", text: "cat education.txt", type: "cmd" },
@@ -92,12 +93,12 @@ export function Experience() {
                   </div>
                   <div className="flex flex-wrap items-center gap-2 font-mono text-xs text-muted-foreground mt-0.5">
                     <span className="text-foreground/90 font-medium">
-                      Software Development Intern
+                      Software Development Engineer (SDE) Intern – Backend
                     </span>
                     <span>•</span>
-                    <span className="inline-flex items-center gap-1">
-                      <MapPin className="h-3 w-3 text-[color:var(--brand-cyan)]" />
-                      Gwalior, India
+                    <span className="inline-flex items-center gap-1 text-[color:var(--brand-cyan)] font-semibold">
+                      <Globe className="h-3 w-3" />
+                      Remote
                     </span>
                   </div>
                 </div>
@@ -105,50 +106,48 @@ export function Experience() {
 
               <div className="flex items-center gap-2 rounded-full border border-border/60 bg-secondary/60 px-3.5 py-1.5 font-mono text-xs text-muted-foreground shadow-sm">
                 <Calendar className="h-3.5 w-3.5 text-[color:var(--brand-cyan)]" />
-                <span className="font-semibold text-foreground/90">3 Months</span>
+                <span className="font-semibold text-foreground/90">Jun 2026 – Aug 2026</span>
+                <span className="text-muted-foreground/60">•</span>
+                <span className="text-muted-foreground">3 mos</span>
               </div>
             </div>
 
             {/* Experience Body */}
             <div className="p-6 sm:p-8 lg:p-10 space-y-6">
-              <p className="text-sm sm:text-base leading-relaxed text-muted-foreground">
-                Served as a Software Development Intern contributing to core software modules and
-                interactive visualization workflows for{" "}
-                <span className="text-foreground font-semibold">SimPHY</span> — an educational 2D/3D
-                physics simulation engine used by students, researchers, and academic institutions.
-              </p>
-
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="rounded-2xl border border-border/40 bg-secondary/20 p-4 sm:p-5 transition-colors hover:border-border/80">
                   <div className="flex items-center gap-2 text-xs font-semibold text-foreground mb-2">
-                    <span className="h-2 w-2 rounded-full bg-[color:var(--brand-cyan)]" />
-                    Feature Development
+                    <Server className="h-4 w-4 text-[color:var(--brand-cyan)]" />
+                    <span>Scalable REST APIs</span>
                   </div>
                   <p className="text-xs sm:text-sm leading-relaxed text-muted-foreground">
-                    Developed interactive UI components and modular tools for physics simulations,
-                    enabling seamless user manipulation of mechanical models and force vectors.
+                    Developed and maintained scalable REST APIs using Node.js and Express.js,
+                    handling core business logic, robust input validation, and secure client-server
+                    communication.
                   </p>
                 </div>
 
                 <div className="rounded-2xl border border-border/40 bg-secondary/20 p-4 sm:p-5 transition-colors hover:border-border/80">
                   <div className="flex items-center gap-2 text-xs font-semibold text-foreground mb-2">
-                    <span className="h-2 w-2 rounded-full bg-[color:var(--brand-violet)]" />
-                    Performance &amp; Rendering
+                    <Database className="h-4 w-4 text-[color:var(--brand-violet)]" />
+                    <span>Database Query Optimization</span>
                   </div>
                   <p className="text-xs sm:text-sm leading-relaxed text-muted-foreground">
-                    Optimized canvas rendering and real-time state updates to guarantee stable frame
-                    rates during complex multi-body mathematical computations.
+                    Optimized database performance by profiling query bottlenecks and restructuring
+                    SQL queries, reducing API response times by 20% across high-traffic, heavy
+                    endpoints.
                   </p>
                 </div>
 
                 <div className="rounded-2xl border border-border/40 bg-secondary/20 p-4 sm:p-5 transition-colors hover:border-border/80">
                   <div className="flex items-center gap-2 text-xs font-semibold text-foreground mb-2">
-                    <span className="h-2 w-2 rounded-full bg-[color:var(--brand-pink)]" />
-                    Code Quality &amp; Agile
+                    <Cloud className="h-4 w-4 text-[color:var(--brand-pink)]" />
+                    <span>AWS &amp; Automated CI/CD</span>
                   </div>
                   <p className="text-xs sm:text-sm leading-relaxed text-muted-foreground">
-                    Collaborated directly with engineering leads, participated in code reviews,
-                    resolved edge-case defects, and managed feature branches using Git.
+                    Managed application deployments on AWS EC2 behind an Nginx reverse proxy with
+                    PM2 process supervision, setting up automated CI/CD deployment pipelines via
+                    GitHub Actions.
                   </p>
                 </div>
               </div>
@@ -160,13 +159,15 @@ export function Experience() {
                     Technologies:
                   </span>
                   {[
-                    "JavaScript",
-                    "React",
-                    "Simulation Logic",
-                    "UI/UX Engineering",
-                    "Git",
-                    "Performance Optimization",
-                    "Problem Solving",
+                    "Node.js",
+                    "Express.js",
+                    "SQL",
+                    "REST APIs",
+                    "AWS EC2",
+                    "Nginx",
+                    "PM2",
+                    "GitHub Actions",
+                    "CI/CD",
                   ].map((tag) => (
                     <span
                       key={tag}
