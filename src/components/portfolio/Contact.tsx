@@ -56,12 +56,15 @@ export function Contact() {
     <section id="contact" className="relative px-4 py-6 sm:py-8">
       <div className="mx-auto max-w-5xl">
         <div className="reveal mb-6 text-center">
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-[color:var(--brand-cyan)]">// contact</p>
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-[color:var(--brand-cyan)]">
+            // contact
+          </p>
           <h2 className="mt-2 text-4xl font-bold sm:text-5xl">
             Let's <span className="text-gradient">Connect</span>
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-            I'm open to new opportunities and would love to hear from you — whether it's a role, a collaboration, or just a chat.
+            I'm open to new opportunities and would love to hear from you — whether it's a role, a
+            collaboration, or just a chat.
           </p>
         </div>
 
@@ -87,7 +90,9 @@ export function Contact() {
                   <Icon className="h-5 w-5" style={{ color }} />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.15em] text-muted-foreground/70">{label}</p>
+                  <p className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.15em] text-muted-foreground/70">
+                    {label}
+                  </p>
                   <p className="mt-0.5 truncate text-xs sm:text-sm font-medium text-foreground/90 transition-colors group-hover:text-foreground">
                     {value}
                   </p>
@@ -99,7 +104,9 @@ export function Contact() {
 
           <div className="my-6 flex items-center gap-4">
             <div className="h-px flex-1 bg-border/40" />
-            <span className="font-mono text-[11px] text-muted-foreground/50 uppercase tracking-[0.15em]">or find me on</span>
+            <span className="font-mono text-[11px] text-muted-foreground/50 uppercase tracking-[0.15em]">
+              or find me on
+            </span>
             <div className="h-px flex-1 bg-border/40" />
           </div>
 

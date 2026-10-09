@@ -40,7 +40,7 @@ export default function ContactForm() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
 
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    await new Promise((resolve) => setTimeout(resolve, 1500));
 
     setIsSubmitting(false);
     setIsSuccess(true);
@@ -68,7 +68,9 @@ export default function ContactForm() {
             >
               <CheckCircle className="h-12 w-12 text-green-500 drop-shadow-md" />
             </motion.div>
-            <h3 className="text-3xl font-bold mb-3 font-heading text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">Message Sent!</h3>
+            <h3 className="text-3xl font-bold mb-3 font-heading text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">
+              Message Sent!
+            </h3>
             <p className="text-muted-foreground text-center max-w-sm leading-relaxed">
               Thanks for reaching out. I'll get back to you as soon as possible.
             </p>
@@ -83,7 +85,6 @@ export default function ContactForm() {
               control={form.control}
               name="name"
               render={({ field }) => (
-
                 <FormItem>
                   <FormLabel className="text-foreground">Name</FormLabel>
                   <FormControl>

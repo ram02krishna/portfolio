@@ -1,11 +1,11 @@
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
-import ContactForm from '@/components/contact/ContactForm';
-import { Mail, Phone, Clock, MessageSquare, CheckCircle2 } from 'lucide-react';
-import { motion } from 'framer-motion';
-import SpotlightCard from '@/components/ui/SpotlightCard';
-import GradientOrb from '@/components/ui/GradientOrb';
-import SectionHeader from '@/components/ui/SectionHeader';
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import ContactForm from "@/components/contact/ContactForm";
+import { Mail, Phone, Clock, MessageSquare, CheckCircle2 } from "lucide-react";
+import { motion } from "framer-motion";
+import SpotlightCard from "@/components/ui/SpotlightCard";
+import GradientOrb from "@/components/ui/GradientOrb";
+import SectionHeader from "@/components/ui/SectionHeader";
 
 const contactInfo = [
   {
@@ -13,16 +13,15 @@ const contactInfo = [
     title: "Email Me",
     description: "I check my inbox daily and usually reply within 24 hours.",
     value: "krishnarammhd@gmail.com",
-    href: "mailto:krishnarammhd@gmail.com"
+    href: "mailto:krishnarammhd@gmail.com",
   },
   {
     icon: Phone,
     title: "Call Me",
     description: "Available for quick chats and interviews.",
     value: "+91 92440 88448",
-    href: "tel:+919244088448"
+    href: "tel:+919244088448",
   },
-
 ];
 
 const trustSignals = [
@@ -50,14 +49,10 @@ export default function Contact() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
-          <SectionHeader
-            badge="Contact"
-            title="Get in"
-            highlight="Touch."
-            className="mb-6"
-          />
+          <SectionHeader badge="Contact" title="Get in" highlight="Touch." className="mb-6" />
           <p className="text-muted-foreground max-w-xl mx-auto text-base md:text-lg">
-            I'm currently open to full-time roles, internships, and freelance projects. Whether you have a question, a job opportunity, or just want to say hello — feel free to reach out.
+            I'm currently open to full-time roles, internships, and freelance projects. Whether you
+            have a question, a job opportunity, or just want to say hello — feel free to reach out.
           </p>
         </motion.div>
 
@@ -83,20 +78,22 @@ export default function Contact() {
             transition={{ duration: 0.4, delay: 0.2 }}
           >
             {contactInfo.map((item, index) => (
-              <SpotlightCard
-                key={index}
-                className="p-1 rounded-2xl group"
-              >
+              <SpotlightCard key={index} className="p-1 rounded-2xl group">
                 <div className="p-5 rounded-xl bg-card/80 backdrop-blur-sm h-full pointer-events-none group-hover:bg-transparent transition-colors duration-500">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary flex-shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                       <item.icon className="h-5 w-5" />
                     </div>
                     <div className="min-w-0 pointer-events-auto">
-                      <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors duration-300">{item.title}</h3>
+                      <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors duration-300">
+                        {item.title}
+                      </h3>
                       <p className="text-muted-foreground text-sm mb-1">{item.description}</p>
                       {item.href ? (
-                        <a href={item.href} className="text-primary hover:underline text-sm font-medium break-all relative z-10">
+                        <a
+                          href={item.href}
+                          className="text-primary hover:underline text-sm font-medium break-all relative z-10"
+                        >
                           {item.value}
                         </a>
                       ) : (
@@ -135,7 +132,8 @@ export default function Contact() {
               <div className="p-6 md:p-10 rounded-[22px] bg-card/80 backdrop-blur-xl h-full flex flex-col justify-center">
                 <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-xl p-4 mb-8 text-yellow-600 dark:text-yellow-400 text-sm flex gap-3 items-start">
                   <div className="w-1.5 h-1.5 rounded-full bg-yellow-500 mt-1.5 shrink-0" />
-                  Note: The contact form is currently under development and sending messages will not work. Please feel free to email me directly.
+                  Note: The contact form is currently under development and sending messages will
+                  not work. Please feel free to email me directly.
                 </div>
                 <h2 className="text-2xl font-bold mb-8 font-heading">Send me a message</h2>
                 <ContactForm />

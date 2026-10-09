@@ -33,9 +33,15 @@ export default function TypewriterLoop({ words, className = "" }: TypewriterLoop
       return;
     }
 
-    const timeout = setTimeout(() => {
-      setSubIndex((prev) => prev + (reverse ? -1 : 1));
-    }, Math.max(reverse ? 75 : subIndex === words[index].length ? 1000 : 150, parseInt((Math.random() * 350).toString())));
+    const timeout = setTimeout(
+      () => {
+        setSubIndex((prev) => prev + (reverse ? -1 : 1));
+      },
+      Math.max(
+        reverse ? 75 : subIndex === words[index].length ? 1000 : 150,
+        parseInt((Math.random() * 350).toString()),
+      ),
+    );
 
     return () => clearTimeout(timeout);
   }, [subIndex, index, reverse, words]);

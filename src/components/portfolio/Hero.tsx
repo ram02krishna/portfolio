@@ -33,7 +33,10 @@ export function Hero() {
   }, [text, deleting, idx]);
 
   return (
-    <section id="hero" className="relative flex min-h-screen items-center justify-center px-4 pt-20 pb-8 sm:pt-24 sm:pb-10 overflow-hidden">
+    <section
+      id="hero"
+      className="relative flex min-h-screen items-center justify-center px-4 pt-20 pb-8 sm:pt-24 sm:pb-10 overflow-hidden"
+    >
       <div className="relative z-10 mx-auto max-w-4xl text-center">
         <h1 className="reveal font-display text-4xl font-bold leading-[1.08] sm:text-6xl md:text-7xl tracking-tight">
           <span className="block text-foreground/90 font-medium">Hi, I'm</span>
@@ -42,15 +45,17 @@ export function Hero() {
 
         <div className="reveal mx-auto mt-6 flex justify-center">
           <div className="inline-flex min-h-[42px] items-center gap-2.5 rounded-xl border border-border/70 bg-secondary/35 px-4 py-2 font-mono text-sm sm:text-base backdrop-blur-md shadow-sm">
-            <span className="font-semibold text-xs sm:text-sm tracking-wider uppercase text-[color:var(--brand-cyan)]">role ~/</span>
-            <span className="font-semibold text-foreground cursor-blink">
-              {text}
+            <span className="font-semibold text-xs sm:text-sm tracking-wider uppercase text-[color:var(--brand-cyan)]">
+              role ~/
             </span>
+            <span className="font-semibold text-foreground cursor-blink">{text}</span>
           </div>
         </div>
 
         <p className="reveal mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-          SDE, Backend &amp; DevOps Engineer crafting scalable systems, resilient APIs, and automated cloud workflows. Passionate about clean code, high performance, and solving complex engineering challenges.
+          SDE, Backend &amp; DevOps Engineer crafting scalable systems, resilient APIs, and
+          automated cloud workflows. Passionate about clean code, high performance, and solving
+          complex engineering challenges.
         </p>
 
         <div className="reveal mx-auto mt-8 max-w-2xl text-left">
@@ -71,10 +76,51 @@ export function Hero() {
             </div>
             <pre className="overflow-x-auto bg-secondary/20 p-4 font-mono text-[11px] leading-6 sm:p-5 sm:text-sm sm:leading-7">
               <code>
-                <div className="flex gap-3 sm:gap-4"><span className="select-none text-muted-foreground/50">01</span><span><span style={{ color: "var(--code-keyword)" }}>const</span> <span style={{ color: "var(--code-variable)" }}>name</span> <span className="text-muted-foreground">=</span> <span style={{ color: "var(--code-string)" }}>"Ram Krishna"</span>;</span></div>
-                <div className="flex gap-3 sm:gap-4"><span className="select-none text-muted-foreground/50">02</span><span><span style={{ color: "var(--code-keyword)" }}>const</span> <span style={{ color: "var(--code-variable)" }}>role</span> <span className="text-muted-foreground">=</span> <span style={{ color: "var(--code-string)" }}>"SDE, Backend & DevOps Engineer"</span>;</span></div>
-                <div className="flex gap-3 sm:gap-4"><span className="select-none text-muted-foreground/50">03</span><span><span style={{ color: "var(--code-keyword)" }}>const</span> <span style={{ color: "var(--code-variable)" }}>status</span> <span className="text-muted-foreground">=</span> <span style={{ color: "var(--code-string)" }}>"Writing code & building projects"</span>;</span></div>
-                <div className="flex gap-3 sm:gap-4"><span className="select-none text-muted-foreground/50">04</span><span><span style={{ color: "var(--code-keyword)" }}>const</span> <span style={{ color: "var(--code-variable)" }}>ratings</span> <span className="text-muted-foreground">=</span> {"{ "}<span style={{ color: "var(--code-property)" }}>codeforces</span>: <span style={{ color: "var(--code-number)" }}>1201</span>, <span style={{ color: "var(--code-property)" }}>leetcode</span>: <span style={{ color: "var(--code-number)" }}>1725</span> {"}"};</span></div>
+                <div className="flex gap-3 sm:gap-4">
+                  <span className="select-none text-muted-foreground/50">01</span>
+                  <span>
+                    <span style={{ color: "var(--code-keyword)" }}>const</span>{" "}
+                    <span style={{ color: "var(--code-variable)" }}>name</span>{" "}
+                    <span className="text-muted-foreground">=</span>{" "}
+                    <span style={{ color: "var(--code-string)" }}>"Ram Krishna"</span>;
+                  </span>
+                </div>
+                <div className="flex gap-3 sm:gap-4">
+                  <span className="select-none text-muted-foreground/50">02</span>
+                  <span>
+                    <span style={{ color: "var(--code-keyword)" }}>const</span>{" "}
+                    <span style={{ color: "var(--code-variable)" }}>role</span>{" "}
+                    <span className="text-muted-foreground">=</span>{" "}
+                    <span style={{ color: "var(--code-string)" }}>
+                      "SDE, Backend & DevOps Engineer"
+                    </span>
+                    ;
+                  </span>
+                </div>
+                <div className="flex gap-3 sm:gap-4">
+                  <span className="select-none text-muted-foreground/50">03</span>
+                  <span>
+                    <span style={{ color: "var(--code-keyword)" }}>const</span>{" "}
+                    <span style={{ color: "var(--code-variable)" }}>status</span>{" "}
+                    <span className="text-muted-foreground">=</span>{" "}
+                    <span style={{ color: "var(--code-string)" }}>
+                      "Writing code & building projects"
+                    </span>
+                    ;
+                  </span>
+                </div>
+                <div className="flex gap-3 sm:gap-4">
+                  <span className="select-none text-muted-foreground/50">04</span>
+                  <span>
+                    <span style={{ color: "var(--code-keyword)" }}>const</span>{" "}
+                    <span style={{ color: "var(--code-variable)" }}>ratings</span>{" "}
+                    <span className="text-muted-foreground">=</span> {"{ "}
+                    <span style={{ color: "var(--code-property)" }}>codeforces</span>:{" "}
+                    <span style={{ color: "var(--code-number)" }}>1201</span>,{" "}
+                    <span style={{ color: "var(--code-property)" }}>leetcode</span>:{" "}
+                    <span style={{ color: "var(--code-number)" }}>1725</span> {"}"};
+                  </span>
+                </div>
               </code>
             </pre>
           </div>
@@ -110,9 +156,14 @@ export function Hero() {
               </span>
             </a>
           </Button>
-          <Button asChild size="lg" variant="outline" className="btn-secondary-standard px-8 py-3 text-base">
+          <Button
+            asChild
+            size="lg"
+            variant="outline"
+            className="btn-secondary-standard px-8 py-3 text-base"
+          >
             <a href="#contact">
-              <Mail className="mr-2 h-4 w-4" /> 
+              <Mail className="mr-2 h-4 w-4" />
               Contact Me
             </a>
           </Button>

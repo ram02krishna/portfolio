@@ -7,11 +7,7 @@ import SectionHeader from "@/components/ui/SectionHeader";
 export default function Services() {
   return (
     <section className="py-16 md:py-20 container mx-auto px-6">
-      <SectionHeader
-        badge="Services"
-        title="Creative"
-        highlight="Solutions."
-      />
+      <SectionHeader badge="Services" title="Creative" highlight="Solutions." />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {services.map((service, index) => (
@@ -30,12 +26,12 @@ export default function Services() {
               <div className="absolute -top-10 -right-10 w-24 h-24 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-all duration-700" />
 
               <CardHeader className="relative z-10 p-8 pb-0">
-                <motion.div
-                  className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/15 to-purple-500/15 flex items-center justify-center mb-6 text-primary group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-sm"
-                >
+                <motion.div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/15 to-purple-500/15 flex items-center justify-center mb-6 text-primary group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-sm">
                   <service.icon className="h-8 w-8" />
                 </motion.div>
-                <CardTitle className="text-2xl font-bold group-hover:text-primary transition-colors duration-300 font-heading tracking-tight">{service.title}</CardTitle>
+                <CardTitle className="text-2xl font-bold group-hover:text-primary transition-colors duration-300 font-heading tracking-tight">
+                  {service.title}
+                </CardTitle>
               </CardHeader>
               <CardContent className="relative z-10 p-8 pt-4">
                 <p className="text-muted-foreground leading-relaxed font-light group-hover:text-foreground/80 transition-colors duration-500">

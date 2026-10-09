@@ -61,10 +61,10 @@ export function CodingPlatforms() {
       const isLight = document.documentElement.classList.contains("light");
       setTheme(isLight ? "light" : "dark");
     });
-    
+
     observer.observe(document.documentElement, {
       attributes: true,
-      attributeFilter: ["class"]
+      attributeFilter: ["class"],
     });
 
     return () => observer.disconnect();
@@ -74,12 +74,15 @@ export function CodingPlatforms() {
     <section id="platforms" className="relative px-4 py-6 sm:py-8">
       <div className="mx-auto max-w-6xl">
         <div className="reveal mb-6 text-center">
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-[color:var(--brand-cyan)]">// competitive</p>
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-[color:var(--brand-cyan)]">
+            // competitive
+          </p>
           <h2 className="mt-2 text-4xl font-bold sm:text-5xl">
             Coding <span className="text-gradient">Platforms.</span>
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm sm:text-base text-muted-foreground">
-            Where I sharpen problem-solving skills, optimize algorithmic time complexities, and build daily consistency.
+            Where I sharpen problem-solving skills, optimize algorithmic time complexities, and
+            build daily consistency.
           </p>
         </div>
 
@@ -115,9 +118,7 @@ export function CodingPlatforms() {
                       {p.rating}
                     </span>
                   </div>
-                  <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
-                    {p.tagline}
-                  </p>
+                  <p className="mt-1 text-xs text-muted-foreground leading-relaxed">{p.tagline}</p>
                 </div>
               </div>
 
@@ -162,8 +163,8 @@ export function CodingPlatforms() {
             </div>
 
             <div className="flex w-full justify-center overflow-x-auto pb-1">
-              <GitHubCalendar 
-                username="ram02krishna" 
+              <GitHubCalendar
+                username="ram02krishna"
                 colorScheme={theme}
                 theme={{
                   light: ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"],

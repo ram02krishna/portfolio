@@ -11,17 +11,20 @@ Welcome to my personal portfolio! Here you'll find everything about my journey a
 ## Getting Started
 
 1. **Clone the repository:**
+
    ```bash
    git clone https://github.com/ram02krishna/My_Portfolio.git
    cd My_Portfolio
    ```
 
 2. **Install dependencies:**
+
    ```bash
    npm install
    ```
 
 3. **Start the development server:**
+
    ```bash
    npm run dev
    ```

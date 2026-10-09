@@ -1,5 +1,5 @@
-import { useEffect, useState, memo } from 'react';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { useEffect, useState, memo } from "react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 
 function CustomCursor() {
   const [isMobile, setIsMobile] = useState(true);
@@ -16,14 +16,14 @@ function CustomCursor() {
   useEffect(() => {
     // Check if device is touch capable. If so, don't show custom cursor.
     const checkMobile = () => {
-      setIsMobile(window.matchMedia('(pointer: coarse)').matches);
+      setIsMobile(window.matchMedia("(pointer: coarse)").matches);
     };
 
     checkMobile();
-    window.addEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
 
     if (!isMobile) {
-      document.body.style.cursor = 'none';
+      document.body.style.cursor = "none";
 
       const handleMouseMove = (e: MouseEvent) => {
         mouseX.set(e.clientX);
@@ -34,27 +34,27 @@ function CustomCursor() {
       const handleMouseOver = (e: MouseEvent) => {
         const target = e.target as HTMLElement;
         const isClickable =
-          target.tagName.toLowerCase() === 'a' ||
-          target.tagName.toLowerCase() === 'button' ||
-          target.closest('a') != null ||
-          target.closest('button') != null ||
-          window.getComputedStyle(target).cursor === 'pointer';
+          target.tagName.toLowerCase() === "a" ||
+          target.tagName.toLowerCase() === "button" ||
+          target.closest("a") != null ||
+          target.closest("button") != null ||
+          window.getComputedStyle(target).cursor === "pointer";
 
         setIsHovering(isClickable);
       };
 
-      window.addEventListener('mousemove', handleMouseMove);
-      window.addEventListener('mouseover', handleMouseOver);
+      window.addEventListener("mousemove", handleMouseMove);
+      window.addEventListener("mouseover", handleMouseOver);
 
       return () => {
-        document.body.style.cursor = 'auto';
-        window.removeEventListener('mousemove', handleMouseMove);
-        window.removeEventListener('mouseover', handleMouseOver);
-        window.removeEventListener('resize', checkMobile);
+        document.body.style.cursor = "auto";
+        window.removeEventListener("mousemove", handleMouseMove);
+        window.removeEventListener("mouseover", handleMouseOver);
+        window.removeEventListener("resize", checkMobile);
       };
     }
 
-    return () => window.removeEventListener('resize', checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, [isMobile, mouseX, mouseY]);
 
   if (isMobile) return null;
@@ -66,8 +66,8 @@ function CustomCursor() {
         style={{
           x: mouseX,
           y: mouseY,
-          translateX: '-50%',
-          translateY: '-50%',
+          translateX: "-50%",
+          translateY: "-50%",
         }}
         animate={{ scale: isHovering ? 0 : 1 }}
         transition={{ duration: 0.15 }}
@@ -77,13 +77,13 @@ function CustomCursor() {
         style={{
           x: cursorX,
           y: cursorY,
-          translateX: '-50%',
-          translateY: '-50%',
+          translateX: "-50%",
+          translateY: "-50%",
         }}
         animate={{
           scale: isHovering ? 1.5 : 1,
-          backgroundColor: isHovering ? 'rgba(139, 92, 246, 0.2)' : 'rgba(139, 92, 246, 0.05)',
-          borderColor: isHovering ? 'rgba(139, 92, 246, 0.8)' : 'rgba(139, 92, 246, 0.3)',
+          backgroundColor: isHovering ? "rgba(139, 92, 246, 0.2)" : "rgba(139, 92, 246, 0.05)",
+          borderColor: isHovering ? "rgba(139, 92, 246, 0.8)" : "rgba(139, 92, 246, 0.3)",
         }}
         transition={{ duration: 0.2 }}
       />

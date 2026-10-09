@@ -47,11 +47,7 @@ export default function TextReveal({ text, className = "", delay = 0 }: TextReve
       className={className}
     >
       {words.map((word, index) => (
-        <motion.span
-          variants={child}
-          style={{ marginRight: "0.25em" }}
-          key={index}
-        >
+        <motion.span variants={child} style={{ marginRight: "0.25em" }} key={index}>
           {word}
         </motion.span>
       ))}

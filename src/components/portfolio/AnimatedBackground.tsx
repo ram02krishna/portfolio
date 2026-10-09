@@ -20,8 +20,10 @@ export function AnimatedBackground() {
     const isDark = () => !document.documentElement.classList.contains("light");
 
     type P = {
-      x: number; y: number;
-      vx: number; vy: number;
+      x: number;
+      y: number;
+      vx: number;
+      vy: number;
       r: number;
       hue: number;
       phase: number;
@@ -71,7 +73,7 @@ export function AnimatedBackground() {
           : 0.1 + 0.08 * Math.sin(tick * p.speed + p.phase);
 
         const saturation = dark ? "80%" : "40%";
-        const lightness  = dark ? "75%" : "55%";
+        const lightness = dark ? "75%" : "55%";
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
@@ -144,4 +146,3 @@ export function AnimatedBackground() {
     </div>
   );
 }
-

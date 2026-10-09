@@ -20,20 +20,27 @@ export function Footer() {
     <footer className="relative border-t border-border px-4 pb-6 pt-10">
       <div
         className="pointer-events-none absolute inset-x-0 top-0 h-px"
-        style={{ background: "linear-gradient(to right, transparent, var(--brand-violet), var(--brand-cyan), transparent)" }}
+        style={{
+          background:
+            "linear-gradient(to right, transparent, var(--brand-violet), var(--brand-cyan), transparent)",
+        }}
       />
 
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-12 md:grid-cols-3">
           <div>
             <h3 className="flex items-center gap-2 font-display text-3xl font-bold">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg" style={{ background: "var(--gradient-brand)" }}>
+              <span
+                className="flex h-8 w-8 items-center justify-center rounded-lg"
+                style={{ background: "var(--gradient-brand)" }}
+              >
                 <Code2 className="h-4 w-4 text-background" />
               </span>
               <span className="text-gradient">Ram Krishna</span>
             </h3>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              Architecting resilient backends and building reliable DevOps pipelines with a focus on engineering excellence and scalable infrastructure.
+              Architecting resilient backends and building reliable DevOps pipelines with a focus on
+              engineering excellence and scalable infrastructure.
             </p>
             <div className="mt-6 flex items-center gap-3">
               {socials.map((s) => (
@@ -52,7 +59,9 @@ export function Footer() {
           </div>
 
           <div className="md:col-span-1">
-            <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-foreground">Explore</p>
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-foreground">
+              Explore
+            </p>
             <div className="mt-5 grid grid-cols-2 gap-x-4 gap-y-3 text-sm">
               {explore.map((l) => (
                 <a
@@ -67,14 +76,13 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-foreground">Stay in touch</p>
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-foreground">
+              Stay in touch
+            </p>
             <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
               Interested in working together or just want to say hi? My inbox is always open.
             </p>
-            <a
-              href="#contact"
-              className="btn-primary-standard mt-5 px-5 py-2.5 text-sm"
-            >
+            <a href="#contact" className="btn-primary-standard mt-5 px-5 py-2.5 text-sm">
               Start a Conversation <Mail className="h-4 w-4" />
             </a>
           </div>

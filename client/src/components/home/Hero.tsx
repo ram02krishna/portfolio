@@ -1,13 +1,13 @@
-import { memo, useRef } from 'react';
-import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
-import { ArrowRight, ChevronDown, Sparkles } from 'lucide-react';
-import { Link } from 'wouter';
-import { Button } from '@/components/ui/button';
-import TextReveal from '@/components/ui/TextReveal';
-import TypewriterLoop from '@/components/ui/TypewriterLoop';
-import ParticleBackground from '@/components/ui/ParticleBackground';
-import GradientOrb from '@/components/ui/GradientOrb';
-import MagneticButton from '@/components/ui/MagneticButton';
+import { memo, useRef } from "react";
+import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
+import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
+import { Link } from "wouter";
+import { Button } from "@/components/ui/button";
+import TextReveal from "@/components/ui/TextReveal";
+import TypewriterLoop from "@/components/ui/TypewriterLoop";
+import ParticleBackground from "@/components/ui/ParticleBackground";
+import GradientOrb from "@/components/ui/GradientOrb";
+import MagneticButton from "@/components/ui/MagneticButton";
 
 function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -57,8 +57,6 @@ function Hero() {
           [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"
         />
 
-
-
         <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/70 to-background" />
 
         {/* Particle Background */}
@@ -95,7 +93,7 @@ function Hero() {
 
         {/* Headline with animated glow aura */}
         <div className="mb-8 flex flex-col items-center w-full relative">
-          <motion.div 
+          <motion.div
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 max-w-[600px] h-[150%] bg-gradient-to-r from-primary/30 to-purple-500/30 blur-[100px] -z-10 rounded-full mix-blend-screen"
             animate={{
               scale: [1, 1.1, 1],
@@ -104,13 +102,17 @@ function Hero() {
             transition={{
               duration: 4,
               repeat: Infinity,
-              ease: "easeInOut"
+              ease: "easeInOut",
             }}
           />
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-extrabold tracking-tight leading-[1] w-full flex flex-col items-center relative z-10">
             <TextReveal text="Building Ideas Into" className="justify-center" delay={0.1} />
             <span className="relative">
-              <TextReveal text="Digital Reality" className="justify-center text-gradient py-2 px-4" delay={0.3} />
+              <TextReveal
+                text="Digital Reality"
+                className="justify-center text-gradient py-2 px-4"
+                delay={0.3}
+              />
               <motion.div
                 className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary via-purple-500 to-blue-500 rounded-full"
                 initial={{ scaleX: 0 }}
@@ -128,15 +130,17 @@ function Hero() {
           transition={{ duration: 0.6, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="text-lg md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed font-light"
         >
-          Turning ideas into <TypewriterLoop
+          Turning ideas into{" "}
+          <TypewriterLoop
             words={[
-              'clean, working software',
-              'full-stack web apps',
-              'fast, responsive UIs',
-              'real products people use'
+              "clean, working software",
+              "full-stack web apps",
+              "fast, responsive UIs",
+              "real products people use",
             ]}
             className="font-semibold text-primary"
-          /> — one line at a time.
+          />{" "}
+          — one line at a time.
         </motion.p>
 
         {/* Buttons */}
@@ -157,8 +161,8 @@ function Hero() {
               </span>
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0"
-                animate={{ x: ['100%', '-100%'] }}
-                transition={{ repeat: Infinity, duration: 2, ease: 'linear' }}
+                animate={{ x: ["100%", "-100%"] }}
+                transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
               />
             </MagneticButton>
           </Link>
@@ -190,12 +194,12 @@ function Hero() {
 
       {/* Scroll-down arrow */}
       <motion.button
-        onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+        onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, y: [0, 8, 0] }}
         transition={{
           opacity: { delay: 1 },
-          y: { repeat: Infinity, duration: 2, ease: 'easeInOut' },
+          y: { repeat: Infinity, duration: 2, ease: "easeInOut" },
         }}
         className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 text-muted-foreground/60 hover:text-primary transition-colors cursor-pointer p-2"
         aria-label="Scroll down to see more"

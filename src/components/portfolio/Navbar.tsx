@@ -26,7 +26,7 @@ export function Navbar() {
           }
         });
       },
-      { rootMargin: "-30% 0px -70% 0px" }
+      { rootMargin: "-30% 0px -70% 0px" },
     );
 
     links.forEach((link) => {
@@ -44,11 +44,7 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-
-  const handleMobileNavClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    sectionId: string
-  ) => {
+  const handleMobileNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault();
     setOpen(false);
     setTimeout(() => {

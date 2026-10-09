@@ -1,12 +1,36 @@
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const codeLines = [
-  { type: 'keyword', text: 'const', content: ' name = ', string: '"Ram Krishna"', punctuation: ';' },
-  { type: 'keyword', text: 'const', content: ' intern = ', string: '"Not yet"', punctuation: ';' },
-  { type: 'keyword', text: 'const', content: ' role = ', string: '"Full stack developer"', punctuation: ';' },
-  { type: 'keyword', text: 'const', content: ' ratings = ', object: '{ cf: ', number1: '944', comma1: ', lc: ', number2: '1572', comma2: ', cc: ', number3: '1385', closing: ' }', punctuation: ';' },
-  { type: 'comment', text: '// Ready to build something extraordinary.' }
+  {
+    type: "keyword",
+    text: "const",
+    content: " name = ",
+    string: '"Ram Krishna"',
+    punctuation: ";",
+  },
+  { type: "keyword", text: "const", content: " intern = ", string: '"Not yet"', punctuation: ";" },
+  {
+    type: "keyword",
+    text: "const",
+    content: " role = ",
+    string: '"Full stack developer"',
+    punctuation: ";",
+  },
+  {
+    type: "keyword",
+    text: "const",
+    content: " ratings = ",
+    object: "{ cf: ",
+    number1: "944",
+    comma1: ", lc: ",
+    number2: "1572",
+    comma2: ", cc: ",
+    number3: "1385",
+    closing: " }",
+    punctuation: ";",
+  },
+  { type: "comment", text: "// Ready to build something extraordinary." },
 ];
 
 export default function CodeSnippet() {
@@ -23,7 +47,7 @@ export default function CodeSnippet() {
       initial={{ opacity: 0, y: 20, scale: 0.95 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       className="w-full max-w-2xl mx-auto rounded-xl overflow-hidden shadow-2xl bg-[#0d1117] border border-white/10"
     >
       {/* Window Header */}
@@ -51,10 +75,10 @@ export default function CodeSnippet() {
               className="flex whitespace-nowrap"
             >
               <div className="mr-6 text-slate-600 select-none hidden sm:block">
-                {(i + 1).toString().padStart(2, '0')}
+                {(i + 1).toString().padStart(2, "0")}
               </div>
               <div>
-                {line.type === 'comment' ? (
+                {line.type === "comment" ? (
                   <span className="text-emerald-500/80">{line.text}</span>
                 ) : (
                   <>

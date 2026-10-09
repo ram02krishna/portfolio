@@ -1,10 +1,10 @@
-import { projects } from '@/lib/data';
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
-import ProjectCard from '@/components/projects/ProjectCard';
-import { motion } from 'framer-motion';
-import GradientOrb from '@/components/ui/GradientOrb';
-import SectionHeader from '@/components/ui/SectionHeader';
+import { projects } from "@/lib/data";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import ProjectCard from "@/components/projects/ProjectCard";
+import { motion } from "framer-motion";
+import GradientOrb from "@/components/ui/GradientOrb";
+import SectionHeader from "@/components/ui/SectionHeader";
 
 export default function Projects() {
   return (
@@ -40,15 +40,14 @@ export default function Projects() {
               />
 
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                A comprehensive collection of my work in web development, enterprise solutions, and corporate websites.
+                A comprehensive collection of my work in web development, enterprise solutions, and
+                corporate websites.
               </p>
             </motion.div>
           </div>
         </section>
 
         <div className="container mx-auto px-6">
-
-
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
@@ -59,7 +58,7 @@ export default function Projects() {
                 transition={{
                   duration: 0.6,
                   delay: index * 0.1,
-                  ease: [0.16, 1, 0.3, 1]
+                  ease: [0.16, 1, 0.3, 1],
                 }}
                 className="h-full"
               >

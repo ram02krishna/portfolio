@@ -1,10 +1,24 @@
-import { Github, Linkedin, Twitter, Mail, Download, User, GraduationCap, Server, ArrowRight } from "lucide-react";
+import {
+  Github,
+  Linkedin,
+  Twitter,
+  Mail,
+  Download,
+  User,
+  GraduationCap,
+  Server,
+  ArrowRight,
+} from "lucide-react";
 import { motion } from "framer-motion";
 
 export function About() {
   const socials = [
     { icon: Github, href: "https://github.com/ram02krishna", label: "GitHub" },
-    { icon: Linkedin, href: "https://www.linkedin.com/in/ram-krishna-419528287/", label: "LinkedIn" },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/ram-krishna-419528287/",
+      label: "LinkedIn",
+    },
     { icon: Twitter, href: "https://x.com/krishnarammhd", label: "Twitter" },
     { icon: Mail, href: "mailto:krishnarammhd@gmail.com", label: "Email" },
   ];
@@ -95,15 +109,27 @@ export function About() {
 
               <div className="mt-3 space-y-3 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 <p>
-                  Hi, I'm Ram Krishna. Over the past few years, I've dedicated myself to understanding systems under the hood — architecting high-concurrency REST microservices, tuning database queries, and automating containerized CI/CD deployments.
+                  Hi, I'm Ram Krishna. Through hands-on software development internship experience
+                  at Simphy Softwares and building production-ready systems, I've dedicated myself
+                  to understanding software under the hood — architecting high-concurrency REST
+                  microservices, tuning database queries, and automating containerized CI/CD
+                  deployments.
                 </p>
                 <p>
-                  I'm actively seeking full-time and internship opportunities where I can contribute to mission-critical infrastructure, write clean and maintainable code, and collaborate with forward-thinking engineering teams.
+                  I'm actively seeking full-time and internship opportunities where I can contribute
+                  to mission-critical infrastructure, write clean and maintainable code, and
+                  collaborate with forward-thinking engineering teams.
                 </p>
               </div>
 
               <div className="mt-4 flex flex-wrap gap-2 pt-2 border-t border-border/40">
-                {["REST Microservices", "Docker & AWS", "PostgreSQL & Prisma", "CI/CD Workflows", "System Design"].map((tag) => (
+                {[
+                  "REST Microservices",
+                  "Docker & AWS",
+                  "PostgreSQL & Prisma",
+                  "CI/CD Workflows",
+                  "System Design",
+                ].map((tag) => (
                   <span
                     key={tag}
                     className="chip-interactive cursor-default rounded-lg border border-border/60 bg-secondary/30 px-2.5 py-1 text-xs font-medium text-foreground/80"
@@ -147,10 +173,18 @@ export function About() {
                     </span>
                   </div>
                   <div className="mt-2.5 flex flex-wrap gap-1.5 text-[11px] text-muted-foreground">
-                    <span className="rounded bg-secondary/40 px-2 py-0.5 border border-border/40">Data Structures &amp; Algorithms</span>
-                    <span className="rounded bg-secondary/40 px-2 py-0.5 border border-border/40">DBMS</span>
-                    <span className="rounded bg-secondary/40 px-2 py-0.5 border border-border/40">OS</span>
-                    <span className="rounded bg-secondary/40 px-2 py-0.5 border border-border/40">Computer Networks</span>
+                    <span className="rounded bg-secondary/40 px-2 py-0.5 border border-border/40">
+                      Data Structures &amp; Algorithms
+                    </span>
+                    <span className="rounded bg-secondary/40 px-2 py-0.5 border border-border/40">
+                      DBMS
+                    </span>
+                    <span className="rounded bg-secondary/40 px-2 py-0.5 border border-border/40">
+                      OS
+                    </span>
+                    <span className="rounded bg-secondary/40 px-2 py-0.5 border border-border/40">
+                      Computer Networks
+                    </span>
                   </div>
                 </div>
 
@@ -169,9 +203,7 @@ export function About() {
                       <span className="rounded-full border border-[color:var(--brand-cyan)]/40 bg-[color:var(--brand-cyan)]/10 px-2.5 py-0.5 font-mono text-[11px] font-semibold text-[color:var(--brand-cyan)]">
                         81%
                       </span>
-                      <span className="font-mono text-[11px] text-muted-foreground">
-                        2022
-                      </span>
+                      <span className="font-mono text-[11px] text-muted-foreground">2022</span>
                     </div>
                   </div>
                 </div>
@@ -191,9 +223,7 @@ export function About() {
                       <span className="rounded-full border border-emerald-500/40 bg-emerald-500/10 px-2.5 py-0.5 font-mono text-[11px] font-semibold text-emerald-400">
                         88%
                       </span>
-                      <span className="font-mono text-[11px] text-muted-foreground">
-                        2020
-                      </span>
+                      <span className="font-mono text-[11px] text-muted-foreground">2020</span>
                     </div>
                   </div>
                 </div>
@@ -209,7 +239,9 @@ export function About() {
             transition={{ duration: 0.45, delay: 0.2 }}
           >
             <div>
-              <h4 className="font-display text-lg font-bold text-foreground">Looking for my full resume?</h4>
+              <h4 className="font-display text-lg font-bold text-foreground">
+                Looking for my full resume?
+              </h4>
               <p className="text-sm text-muted-foreground mt-0.5">
                 Download my up-to-date resume with technical skills, education, and past work.
               </p>
@@ -226,10 +258,7 @@ export function About() {
                 <Download className="h-4 w-4" />
                 Download Resume
               </a>
-              <a
-                href="#contact"
-                className="btn-secondary-standard px-6 py-3 text-sm"
-              >
+              <a href="#contact" className="btn-secondary-standard px-6 py-3 text-sm">
                 Get in touch
                 <ArrowRight className="h-4 w-4" />
               </a>

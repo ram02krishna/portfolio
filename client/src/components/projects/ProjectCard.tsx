@@ -1,10 +1,6 @@
 import { memo, useState, useEffect } from "react";
 import { Link } from "wouter";
-import {
-  ArrowUpRight,
-  ExternalLink,
-  ArrowRight,
-} from "lucide-react";
+import { ArrowUpRight, ExternalLink, ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { type Project } from "@/lib/data";
@@ -19,7 +15,6 @@ function ProjectCard({ project }: { project: Project }) {
 
   const rotateX = useSpring(0, { stiffness: 300, damping: 30 });
   const rotateY = useSpring(0, { stiffness: 300, damping: 30 });
-
 
   const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
     if (!isHovered) return;
@@ -114,9 +109,14 @@ function ProjectCard({ project }: { project: Project }) {
 
             <div className="flex items-center justify-between pt-4 border-t border-border/40 group-hover:border-primary/20 transition-colors duration-300">
               <span className="text-xs font-medium text-muted-foreground group-hover:text-primary transition-colors duration-300 flex items-center gap-1">
-                Case Study <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
+                Case Study{" "}
+                <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
               </span>
-              <Button variant="ghost" size="sm" className="rounded-full h-8 w-8 p-0 hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="rounded-full h-8 w-8 p-0 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              >
                 <ArrowUpRight className="h-4 w-4" />
               </Button>
             </div>

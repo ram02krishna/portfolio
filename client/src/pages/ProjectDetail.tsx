@@ -1,22 +1,14 @@
-
-import { useRoute, Link } from 'wouter';
-import { getProject, projects } from '@/lib/data';
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
-import { Button } from '@/components/ui/button';
-import {
-  ArrowLeft,
-  Github,
-  ExternalLink,
-  ArrowRight,
-  User,
-  Layers,
-} from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { useRoute, Link } from "wouter";
+import { getProject, projects } from "@/lib/data";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft, Github, ExternalLink, ArrowRight, User, Layers } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 
 export default function ProjectDetail() {
-  const [, params] = useRoute('/project/:id');
+  const [, params] = useRoute("/project/:id");
   const project = params?.id ? getProject(params.id) : undefined;
 
   const { scrollY } = useScroll();
@@ -24,7 +16,6 @@ export default function ProjectDetail() {
 
   const currentIndex = projects.findIndex((p) => p.id === params?.id);
   const nextProject = projects[(currentIndex + 1) % projects.length];
-
 
   if (!project) {
     return (
@@ -67,7 +58,10 @@ export default function ProjectDetail() {
             transition={{ delay: 0.2 }}
           >
             <Link href="/projects">
-              <Button variant="ghost" className="mb-8 text-white/90 hover:text-white hover:bg-white/10 backdrop-blur-sm rounded-full">
+              <Button
+                variant="ghost"
+                className="mb-8 text-white/90 hover:text-white hover:bg-white/10 backdrop-blur-sm rounded-full"
+              >
                 <ArrowLeft className="mr-2 h-4 w-4" /> Back to Projects
               </Button>
             </Link>
@@ -89,7 +83,10 @@ export default function ProjectDetail() {
                 {project.category}
               </Badge>
               {project.featured && (
-                <Badge variant="secondary" className="backdrop-blur-md bg-white/20 text-white hover:bg-white/30 px-5 py-1.5 text-sm rounded-full">
+                <Badge
+                  variant="secondary"
+                  className="backdrop-blur-md bg-white/20 text-white hover:bg-white/30 px-5 py-1.5 text-sm rounded-full"
+                >
                   Featured
                 </Badge>
               )}
@@ -116,7 +113,11 @@ export default function ProjectDetail() {
                 </Button>
               </a>
               <a href={project.repo} target="_blank" rel="noopener noreferrer">
-                <Button size="lg" variant="secondary" className="rounded-full backdrop-blur-md bg-white/90 hover:bg-white text-black border-0 shadow-lg h-14 px-8">
+                <Button
+                  size="lg"
+                  variant="secondary"
+                  className="rounded-full backdrop-blur-md bg-white/90 hover:bg-white text-black border-0 shadow-lg h-14 px-8"
+                >
                   Source Code <Github className="ml-2 h-5 w-5" />
                 </Button>
               </a>
@@ -127,7 +128,6 @@ export default function ProjectDetail() {
 
       <main className="container mx-auto px-6 py-16 md:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-
           <div className="lg:col-span-8 space-y-12 md:space-y-16">
             <motion.section
               initial={{ opacity: 0, y: 20 }}
@@ -142,7 +142,6 @@ export default function ProjectDetail() {
                 {project.fullDescription}
               </p>
             </motion.section>
-
           </div>
 
           <div className="lg:col-span-4">
@@ -155,8 +154,10 @@ export default function ProjectDetail() {
               >
                 <h3 className="font-bold mb-6 text-xl">Technologies Used</h3>
                 <div className="flex flex-wrap gap-2 mb-8">
-                  {project.technologies.map(tech => (
-                    <Badge key={tech} variant="secondary" className="rounded-lg px-4 py-2 text-sm">{tech}</Badge>
+                  {project.technologies.map((tech) => (
+                    <Badge key={tech} variant="secondary" className="rounded-lg px-4 py-2 text-sm">
+                      {tech}
+                    </Badge>
                   ))}
                 </div>
 
@@ -189,14 +190,15 @@ export default function ProjectDetail() {
                 >
                   <h4 className="text-sm text-muted-foreground mb-2">Next Project</h4>
                   <div className="flex justify-between items-center">
-                    <span className="font-bold text-xl group-hover:text-primary transition-colors">{nextProject.title}</span>
+                    <span className="font-bold text-xl group-hover:text-primary transition-colors">
+                      {nextProject.title}
+                    </span>
                     <ArrowRight className="h-6 w-6 text-primary group-hover:translate-x-0.5 transition-transform" />
                   </div>
                 </motion.div>
               </Link>
             </div>
           </div>
-
         </div>
       </main>
 

@@ -175,14 +175,7 @@ export const skillCategories = [
   },
   {
     title: "Tools & DevOps",
-    skills: [
-      "Git & GitHub",
-      "Docker",
-      "Linux Fundamentals",
-      "Postman",
-      "VS Code",
-      "Vercel",
-    ],
+    skills: ["Git & GitHub", "Docker", "Linux Fundamentals", "Postman", "VS Code", "Vercel"],
   },
   {
     title: "Computer Science",
@@ -221,7 +214,7 @@ export function getProject(id: string): Project | undefined {
     (p) =>
       p.id === id ||
       (id === "orbix" && p.id === "quickconnect") ||
-      (id === "visitor-management" && p.id === "iiitn-vms")
+      (id === "visitor-management" && p.id === "iiitn-vms"),
   );
 }
 

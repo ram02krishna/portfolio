@@ -1,20 +1,20 @@
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
-import Hero from '@/components/home/Hero';
-import Stats from '@/components/home/Stats';
-import TechStack from '@/components/home/TechStack';
-import Services from '@/components/home/Services';
-import Experience from '@/components/home/Experience';
-import ProjectCard from '@/components/projects/ProjectCard';
-import HomeContact from '@/components/home/HomeContact';
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import Hero from "@/components/home/Hero";
+import Stats from "@/components/home/Stats";
+import TechStack from "@/components/home/TechStack";
+import Services from "@/components/home/Services";
+import Experience from "@/components/home/Experience";
+import ProjectCard from "@/components/projects/ProjectCard";
+import HomeContact from "@/components/home/HomeContact";
 
-import { getFeaturedProjects } from '@/lib/data';
-import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
-import { Link } from 'wouter';
-import ScrollProgress from '@/components/ui/ScrollProgress';
-import { motion } from 'framer-motion';
-import SectionHeader from '@/components/ui/SectionHeader';
+import { getFeaturedProjects } from "@/lib/data";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import { Link } from "wouter";
+import ScrollProgress from "@/components/ui/ScrollProgress";
+import { motion } from "framer-motion";
+import SectionHeader from "@/components/ui/SectionHeader";
 
 export default function Home() {
   const featuredProjects = getFeaturedProjects();
@@ -50,7 +50,7 @@ export default function Home() {
             transition={{ duration: 0.4 }}
           >
             <div className="w-full md:w-auto mt-6">
-              <SectionHeader 
+              <SectionHeader
                 align="left"
                 badge="Portfolio"
                 title="Featured"
@@ -59,8 +59,12 @@ export default function Home() {
               />
             </div>
             <Link href="/projects">
-              <Button variant="outline" className="hidden md:flex group rounded-full px-6 hover:bg-primary hover:text-primary-foreground transition-all">
-                View All Projects <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <Button
+                variant="outline"
+                className="hidden md:flex group rounded-full px-6 hover:bg-primary hover:text-primary-foreground transition-all"
+              >
+                View All Projects{" "}
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </Link>
           </motion.div>

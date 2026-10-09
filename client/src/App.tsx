@@ -43,14 +43,52 @@ function Router() {
     >
       <AnimatePresence mode="wait">
         <Switch key={location}>
-          <Route path="/" component={() => <PageTransition><Home /></PageTransition>} />
-          <Route path="/projects" component={() => <PageTransition><Projects /></PageTransition>} />
+          <Route
+            path="/"
+            component={() => (
+              <PageTransition>
+                <Home />
+              </PageTransition>
+            )}
+          />
+          <Route
+            path="/projects"
+            component={() => (
+              <PageTransition>
+                <Projects />
+              </PageTransition>
+            )}
+          />
           <Route path="/project/:id">
-            {() => <PageTransition><ProjectDetail /></PageTransition>}
+            {() => (
+              <PageTransition>
+                <ProjectDetail />
+              </PageTransition>
+            )}
           </Route>
-          <Route path="/about" component={() => <PageTransition><About /></PageTransition>} />
-          <Route path="/contact" component={() => <PageTransition><Contact /></PageTransition>} />
-          <Route component={() => <PageTransition><NotFound /></PageTransition>} />
+          <Route
+            path="/about"
+            component={() => (
+              <PageTransition>
+                <About />
+              </PageTransition>
+            )}
+          />
+          <Route
+            path="/contact"
+            component={() => (
+              <PageTransition>
+                <Contact />
+              </PageTransition>
+            )}
+          />
+          <Route
+            component={() => (
+              <PageTransition>
+                <NotFound />
+              </PageTransition>
+            )}
+          />
         </Switch>
       </AnimatePresence>
     </Suspense>
@@ -59,7 +97,12 @@ function Router() {
 
 function App() {
   return (
-    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} storageKey="portfolio-theme-v2">
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="dark"
+      enableSystem={false}
+      storageKey="portfolio-theme-v2"
+    >
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
           <ScrollToTop />

@@ -1,14 +1,42 @@
-import CountUp from 'react-countup';
-import { useInView } from 'react-intersection-observer';
-import { motion } from 'framer-motion';
-import { Code2, FolderGit2, Award, Coffee } from 'lucide-react';
-import SpotlightCard from '@/components/ui/SpotlightCard';
+import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
+import { Code2, FolderGit2, Award, Coffee } from "lucide-react";
+import SpotlightCard from "@/components/ui/SpotlightCard";
 
 const stats = [
-  { label: 'Skills Mastered', value: 8, suffix: '+', icon: Code2, colorClass: 'text-blue-500', borderClass: 'border-blue-500' },
-  { label: 'Projects Completed', value: 4, suffix: '+', icon: FolderGit2, colorClass: 'text-purple-500', borderClass: 'border-purple-500' },
-  { label: 'Certifications Earned', value: 1, suffix: '+', icon: Award, colorClass: 'text-orange-500', borderClass: 'border-orange-500' },
-  { label: 'Cups of Coffee', value: 125, suffix: '+', icon: Coffee, colorClass: 'text-green-500', borderClass: 'border-green-500' },
+  {
+    label: "Skills Mastered",
+    value: 8,
+    suffix: "+",
+    icon: Code2,
+    colorClass: "text-blue-500",
+    borderClass: "border-blue-500",
+  },
+  {
+    label: "Projects Completed",
+    value: 4,
+    suffix: "+",
+    icon: FolderGit2,
+    colorClass: "text-purple-500",
+    borderClass: "border-purple-500",
+  },
+  {
+    label: "Certifications Earned",
+    value: 1,
+    suffix: "+",
+    icon: Award,
+    colorClass: "text-orange-500",
+    borderClass: "border-orange-500",
+  },
+  {
+    label: "Cups of Coffee",
+    value: 125,
+    suffix: "+",
+    icon: Coffee,
+    colorClass: "text-green-500",
+    borderClass: "border-green-500",
+  },
 ];
 
 export default function Stats() {
@@ -42,7 +70,9 @@ export default function Stats() {
                 <div className="relative z-10">
                   {/* Icon */}
                   <div className="flex justify-center mb-5">
-                    <div className={`w-14 h-14 rounded-full border-2 ${stat.borderClass} ${stat.colorClass} flex items-center justify-center bg-background/50 group-hover:scale-110 transition-transform duration-500`}>
+                    <div
+                      className={`w-14 h-14 rounded-full border-2 ${stat.borderClass} ${stat.colorClass} flex items-center justify-center bg-background/50 group-hover:scale-110 transition-transform duration-500`}
+                    >
                       <stat.icon className="h-6 w-6 stroke-[2]" />
                     </div>
                   </div>
@@ -54,7 +84,9 @@ export default function Stats() {
                       <span>0{stat.suffix}</span>
                     )}
                   </h3>
-                  <p className="text-muted-foreground font-medium text-sm group-hover:text-foreground/80 transition-colors duration-300">{stat.label}</p>
+                  <p className="text-muted-foreground font-medium text-sm group-hover:text-foreground/80 transition-colors duration-300">
+                    {stat.label}
+                  </p>
                 </div>
               </SpotlightCard>
             </motion.div>
