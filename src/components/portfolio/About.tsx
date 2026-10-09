@@ -109,11 +109,9 @@ export function About() {
 
               <div className="mt-3 space-y-3 text-sm sm:text-base leading-relaxed text-muted-foreground">
                 <p>
-                  Hi, I'm Ram Krishna. Through hands-on software development internship experience
-                  at Simphy Softwares and building production-ready systems, I've dedicated myself
-                  to understanding software under the hood — architecting high-concurrency REST
-                  microservices, tuning database queries, and automating containerized CI/CD
-                  deployments.
+                  Hi, I'm Ram Krishna. Over the past few years, I've dedicated myself to understanding
+                  systems under the hood — architecting high-concurrency REST microservices, tuning
+                  database queries, and automating containerized CI/CD deployments.
                 </p>
                 <p>
                   I'm actively seeking full-time and internship opportunities where I can contribute
