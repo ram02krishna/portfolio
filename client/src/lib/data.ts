@@ -20,13 +20,13 @@ export interface Experience {
 
 export const projects: Project[] = [
   {
-    id: "expense-tracker",
-    title: "Expense Tracker",
+    id: "spendora",
+    title: "Spendora",
     category: "Full Stack",
     description:
       "A professional full-stack finance manager with React 19 and Node.js. Features real-time analytics, automated budgeting, and professional PDF report generation.",
     fullDescription:
-      "Expense Tracker is a professional-grade full-stack financial management application built with React 19, Node.js, and MongoDB. It offers users a secure and intuitive platform to manage their personal finances with precision. Key features include a real-time interactive dashboard with multiple visualization options (Bar, Line, and Doughnut charts via Recharts and Chart.js), comprehensive CRUD operations for income and expense records, and advanced budget tracking with recurring daily, weekly, or monthly options. The application prioritizes security with JWT-based authentication and robust backend protection including rate limiting and input sanitization. Users can generate professional PDF reports with embedded charts, manage profiles with Cloudinary-backed image uploads, and enjoy a seamless responsive experience in both dark and light modes.",
+      "Spendora is a professional-grade full-stack financial management application built with React 19, Node.js, and MongoDB. It offers users a secure and intuitive platform to manage their personal finances with precision. Key features include a real-time interactive dashboard with multiple visualization options (Bar, Line, and Doughnut charts via Recharts and Chart.js), comprehensive CRUD operations for income and expense records, and advanced budget tracking with recurring daily, weekly, or monthly options. The application prioritizes security with JWT-based authentication and robust backend protection including rate limiting and input sanitization. Users can generate professional PDF reports with embedded charts, manage profiles with Cloudinary-backed image uploads, and enjoy a seamless responsive experience in both dark and light modes.",
     technologies: [
       "React 19",
       "Node.js",
@@ -43,8 +43,8 @@ export const projects: Project[] = [
       "Framer Motion",
       "Vite",
     ],
-    link: "https://expense-tracker-omega-wine.vercel.app/login",
-    repo: "https://github.com/ByteOps02/Expense_Tracker",
+    link: "https://spendora-finance.vercel.app/login",
+    repo: "https://github.com/ram02krishna/spendora-expense-tracker",
     featured: true,
   },
   {
@@ -72,7 +72,7 @@ export const projects: Project[] = [
       "JWT",
       "React Hook Form",
     ],
-    link: "https://visitor-management-system-xi.vercel.app/",
+    link: "https://iiitn-vms.vercel.app/",
     repo: "https://github.com/ram02krishna/Visitor-Management-System",
     featured: true,
   },
@@ -102,7 +102,7 @@ export const projects: Project[] = [
       "Radix UI",
       "React Virtuoso",
     ],
-    link: "https://orbix-connect-beyond-boundaries.vercel.app/",
+    link: "https://quick-connect-chatapp.vercel.app/",
     repo: "https://github.com/ram02krishna/QuickConnect",
     featured: true,
   },
@@ -129,8 +129,8 @@ export const projects: Project[] = [
       "Docker",
       "Vercel",
     ],
-    link: "https://url-shortener-lac-five.vercel.app",
-    repo: "https://github.com/ByteOps02/URL_Shortener",
+    link: "https://getnanourl.vercel.app/",
+    repo: "https://github.com/ram02krishna/nano-url",
     featured: true,
   },
 ];

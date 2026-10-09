@@ -26,7 +26,7 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: "Expense Tracker",
+    title: "Spendora",
     tag: "Full Stack",
     desc: "A full-stack MERN finance manager where users log income & expenses, set category budgets, visualize spending via interactive charts, and export reports as Excel or PDF — with secure JWT auth and email OTP recovery.",
     features: [
@@ -35,8 +35,8 @@ const projects: Project[] = [
       "Excel & PDF report export, rate limiting, Helmet.js security headers"
     ],
     stack: ["React", "Node.js", "Express.js", "MongoDB", "Mongoose", "Cloudinary", "Tailwind CSS", "JWT", "Resend", "ExcelJS"],
-    github: "https://github.com/ram02krishna/Expense_Tracker",
-    live: "https://expense-tracker-omega-wine.vercel.app/login#",
+    github: "https://github.com/ram02krishna/spendora-expense-tracker",
+    live: "https://spendora-finance.vercel.app/login",
   },
   {
     title: "IIIT Nagpur VMS",
@@ -49,7 +49,7 @@ const projects: Project[] = [
     ],
     stack: ["React", "TypeScript", "Node.js", "Express.js", "Prisma", "PostgreSQL", "Tailwind CSS", "Zustand", "Resend", "Cloudinary", "HTML5 QR", "PWA", "Vite"],
     github: "https://github.com/ram02krishna/Visitor-Management-System",
-    live: "https://visitor-management-system-xi.vercel.app/#",
+    live: "https://iiitn-vms.vercel.app/",
   },
   {
     title: "QuickConnect",
@@ -62,7 +62,7 @@ const projects: Project[] = [
     ],
     stack: ["Next.js 15", "React 19", "Socket.io", "WebRTC", "Express.js", "Prisma", "PostgreSQL", "Upstash Redis", "Tailwind CSS v4", "Zustand", "TanStack Query", "Argon2id", "Resend", "Cloudinary"],
     github: "https://github.com/ram02krishna/QuickConnect",
-    live: "https://orbix-connect-beyond-boundaries.vercel.app/",
+    live: "https://quick-connect-chatapp.vercel.app/",
   },
   {
     title: "nanoURL",
@@ -74,8 +74,8 @@ const projects: Project[] = [
       "Dockerized deployment with Zod-powered centralized validation and Drizzle ORM"
     ],
     stack: ["React", "Node.js", "Express.js", "PostgreSQL", "Drizzle ORM", "Docker", "Tailwind CSS", "JWT", "Zod", "Vite", "Resend"],
-    github: "https://github.com/ram02krishna/URL_Shortener",
-    live: "https://url-shortener-lac-five.vercel.app/",
+    github: "https://github.com/ram02krishna/nano-url",
+    live: "https://getnanourl.vercel.app/",
   },
 ];
 
