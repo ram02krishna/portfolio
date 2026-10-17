@@ -6,7 +6,7 @@ A modern developer portfolio built with an authentic Apple macOS Terminal aesthe
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework:** [Next.js 14](https://nextjs.org/) (App Router)
 - **Language:** [TypeScript](https://www.typescriptlang.org/)
