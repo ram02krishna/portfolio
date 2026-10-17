@@ -88,15 +88,16 @@ export async function POST(req: Request) {
       hour12: true,
     }).format(now);
     const timestamp = `${istDate} • ${istTime} IST`;
+    const txId = Math.random().toString(36).substring(2, 6).toUpperCase();
 
-    const subjectLine = `Portfolio: Message from ${name}`;
+    const subjectLine = `Portfolio: Message from ${name} [#${txId}]`;
 
     const emailResult = await resend.emails.send({
       from: fromEmail,
       to: [toEmail],
       replyTo: email,
       subject: subjectLine,
-      text: `[New Portfolio Transmission]\n\nFrom: ${name}\nEmail: ${email}\nTime: ${timestamp}\n\nMessage:\n${message}\n`,
+      text: `[New Portfolio Transmission #${txId}]\n\nFrom: ${name}\nEmail: ${email}\nTime: ${timestamp}\n\nMessage:\n${message}\n`,
       html: `
 <!DOCTYPE html>
 <html lang="en">
@@ -249,7 +250,7 @@ ${escapeHtml(message)}
 
               <!-- Quick-Action CTA -->
               <div style="padding-top: 6px; margin-bottom: 20px;">
-                <a href="mailto:${escapeHtml(email)}?subject=Re:%20Portfolio%20Inquiry" class="cta-button" style="display: inline-block; background-color: #10b981; color: #121214; font-weight: 700; font-size: 14px; padding: 12px 24px; border-radius: 6px; text-decoration: none; letter-spacing: 0.3px; transition: opacity 0.2s;">
+                <a href="mailto:${escapeHtml(email)}?subject=Re:%20Portfolio%20Inquiry%20[#${txId}]" class="cta-button" style="display: inline-block; background-color: #10b981; color: #121214; font-weight: 700; font-size: 14px; padding: 12px 24px; border-radius: 6px; text-decoration: none; letter-spacing: 0.3px; transition: opacity 0.2s;">
                   ↵ Reply to ${escapeHtml(name)}
                 </a>
               </div>
@@ -259,13 +260,18 @@ ${escapeHtml(message)}
                 <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="footer-table" style="border-collapse: collapse; font-size: 12px; color: #98989d;">
                   <tr>
                     <td align="left" style="padding: 3px 0;">
-                      <span style="color: #10b981;">✓</span> process exited with status 0 (success)
+                      <span style="color: #10b981;">✓</span> process exited with status 0 (tx: #${txId})
                     </td>
                     <td align="right" style="padding: 3px 0;">
                       <a href="https://ram02krishna.me" style="color: #98989d; text-decoration: none;">ram02krishna.me</a>
                     </td>
                   </tr>
                 </table>
+              </div>
+
+              <!-- Unique Nonce to prevent Gmail duplicate suffix trimming -->
+              <div style="display: none; max-height: 0px; overflow: hidden; font-size: 1px; line-height: 1px; color: #1e1e1e; mso-hide: all; opacity: 0;">
+                tx-token: ${txId} • ${timestamp}
               </div>
 
             </div>
