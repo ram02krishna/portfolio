@@ -89,18 +89,7 @@ export async function POST(req: Request) {
     }).format(now);
     const timestamp = `${istDate} • ${istTime} IST`;
 
-    const timeShort =
-      new Intl.DateTimeFormat("en-US", {
-        timeZone: "Asia/Kolkata",
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: true,
-      }).format(now) + " IST";
-
-    const cleanSnippet = message.replace(/\s+/g, " ").trim().slice(0, 35);
-    const subjectLine = cleanSnippet
-      ? `[Portfolio] ${name} (${timeShort}) — "${cleanSnippet}${message.length > 35 ? "..." : ""}"`
-      : `[Portfolio] Message from ${name} (${timeShort})`;
+    const subjectLine = `Portfolio: Message from ${name}`;
 
     const emailResult = await resend.emails.send({
       from: fromEmail,
