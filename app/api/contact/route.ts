@@ -72,8 +72,31 @@ export async function POST(req: Request) {
       process.env.CONTACT_FROM_EMAIL ||
       "ramkrishna-portfolio <portfolio@ram02krishna.me>";
 
-    const timestamp = new Date().toUTCString();
-    const timeShort = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+    const now = new Date();
+    const istDate = new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Asia/Kolkata",
+      weekday: "short",
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+    }).format(now);
+    const istTime = new Intl.DateTimeFormat("en-US", {
+      timeZone: "Asia/Kolkata",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: true,
+    }).format(now);
+    const timestamp = `${istDate} • ${istTime} IST`;
+
+    const timeShort =
+      new Intl.DateTimeFormat("en-US", {
+        timeZone: "Asia/Kolkata",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: true,
+      }).format(now) + " IST";
+
     const cleanSnippet = message.replace(/\s+/g, " ").trim().slice(0, 35);
     const subjectLine = cleanSnippet
       ? `[Portfolio] ${name} (${timeShort}) — "${cleanSnippet}${message.length > 35 ? "..." : ""}"`
@@ -209,8 +232,8 @@ export async function POST(req: Request) {
                     </td>
                   </tr>
                   <tr class="meta-row">
-                    <td class="meta-cell" style="color: #98989d; width: 90px; padding: 5px 0; font-size: 11px; white-space: nowrap;">$ received:</td>
-                    <td class="meta-cell" style="color: #98989d; padding: 5px 0; font-size: 11px; word-break: break-word;">${timestamp}</td>
+                    <td class="meta-cell" style="color: #98989d; width: 90px; padding: 5px 0; font-size: 11.5px; white-space: nowrap;">$ received:</td>
+                    <td class="meta-cell" style="color: #d4d4d8; padding: 5px 0; font-size: 11.5px; word-break: break-word;">${timestamp}</td>
                   </tr>
                 </table>
               </div>
