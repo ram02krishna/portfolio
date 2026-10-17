@@ -2,7 +2,7 @@
 
 A modern developer portfolio built with an authentic Apple macOS Terminal aesthetic.
 
-🌐 **Live Website:** [ram02krishna.me](https://ram02krishna.me)
+ **Live Website:** [ram02krishna.me](https://ram02krishna.me)
 
 ---
 
@@ -17,7 +17,7 @@ A modern developer portfolio built with an authentic Apple macOS Terminal aesthe
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Clone & Install
 
@@ -47,7 +47,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-## 📦 Scripts
+## Scripts
 
 - `npm run dev` — Start the local development server
 - `npm run build` — Build the application for production
