@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body { background: #121214; color: #f5f5f7; font-family: var(--font-sans), sans-serif; overflow-x: hidden; }
+::selection { background: #10b98133; }
+
+@layer components {
+  .term-card { @apply rounded-xl border border-line bg-card transition-colors duration-200 hover:border-emerald/50 hover:shadow-[0_0_24px_-8px_#10b981]; }
+  .pill { @apply rounded border border-line bg-bg px-2 py-0.5 font-mono text-xs text-cyan; }
+  .cmt { @apply font-mono text-sm text-muted; }
+}
+@keyframes blink { 50% { opacity: 0; } }
+.cursor { animation: blink 1s steps(1) infinite; }
+@media (prefers-reduced-motion: reduce) { .cursor, .animate-pulse { animation: none; } html { scroll-behavior: auto; } }
+:focus-visible { outline: 2px solid #06b6d4; outline-offset: 2px; }
+input:focus, input:focus-visible,
+textarea:focus, textarea:focus-visible {
+  outline: none !important;
+}
