@@ -12,7 +12,7 @@ export default function Navbar() {
     <nav className="fixed inset-x-0 top-0 z-50 border-b border-line bg-bg/85 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-3.5 py-2.5 sm:px-4 sm:py-3 font-mono text-xs sm:text-sm">
         <Link href="#top" onClick={() => setIsOpen(false)} className="group flex items-center gap-1.5 sm:gap-2">
-          <Terminal size={15} className="text-emerald transition-transform group-hover:scale-110 sm:w-4 sm:h-4" />
+          <Terminal size={19} className="text-emerald transition-transform group-hover:scale-110 w-[18px] h-[18px] sm:w-5 sm:h-5" />
           <div className="flex items-center">
             <span className="text-emerald">ramkrishna</span><span className="text-muted">@</span><span className="text-cyan">portfolio</span>
             <span className="cursor ml-1 inline-block h-3.5 w-1.5 sm:h-4 sm:w-2 bg-emerald" />
