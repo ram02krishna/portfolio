@@ -34,7 +34,7 @@ Create a `.env.local` file in the root directory:
 ```env
 RESEND_API_KEY=re_your_api_key_here
 CONTACT_TO_EMAIL=your_email@gmail.com
-CONTACT_FROM_EMAIL=portfolio@ram02krishna.me
+CONTACT_FROM_EMAIL=portfolio@yourdomain
 ```
 
 ### 3. Run Locally
