@@ -45,8 +45,8 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    file: "event-seat-booking.ts",
-    title: "Event Seat Booking — Concurrency-Safe Ticketing Platform",
+    file: "seatlock.ts",
+    title: "SeatLock — Concurrency-Safe Ticketing Platform",
     bullets: [
       "Built a concurrency-safe ticketing platform with an interactive SVG seat map, using atomic conditional SQL updates in Prisma transactions and sorted seat-lock ordering to prevent double bookings and deadlocks.",
       "Implemented 5-minute seat holds with BullMQ and Redis delayed jobs plus a periodic sweeper to release abandoned carts, pushing live seat updates to all viewers through per-event Socket.io rooms.",
