@@ -93,16 +93,56 @@ export const projects: Project[] = [
     live: "https://spendora-finance.vercel.app/login",
     github: "https://github.com/ram02krishna/spendora-expense-tracker",
   },
+  {
+    file: "sonara-music.tsx",
+    title: "Sonara — Full-Stack Music Streaming Platform",
+    bullets: [
+      "Built a Spotify/Apple Music-inspired platform with its own accounts (email or guest), playlists, liked songs, followed artists, saved albums and listening history, using Spotify purely as a read-only catalogue so no third-party account connection is needed.",
+      "Designed a Next.js (App Router) frontend proxying same-origin /api/v1 calls to a Go (chi) API backed by PostgreSQL and Redis with an in-memory fallback, keeping the HTTP-only session cookie first-party.",
+      "Shipped a rich player: drag-to-reorder queue, shuffle/repeat, autoplay of similar music, sleep timer, synced lyrics, full-screen album-colour theming, command palette and keyboard shortcuts, plus a personalised home built from each listener's history and chosen languages and genres.",
+      "Deployed the web app on Vercel and the Go API, PostgreSQL and Redis on AWS EC2 behind Nginx with HTTPS, using GitHub Actions to test, build and push the Docker image and auto-update the server on every push.",
+    ],
+    tech: ["TypeScript", "Next.js", "React", "Tailwind CSS", "Go", "PostgreSQL", "Prisma ORM", "Redis", "Zustand", "TanStack Query", "Docker", "AWS EC2", "Nginx"],
+    metricsCmd: "feature_highlights.json",
+    metrics: [
+      ["Go + Next.js", "monorepo_full_stack"],
+      ["Spotify + iTunes", "catalogue_&_30s_previews"],
+      ["CI/CD → EC2", "docker_hub_auto_deploy"],
+    ],
+    flow: ["Next.js UI", "/api/v1 Proxy", "Go (chi) API", "PostgreSQL / Redis Cache", "Spotify · iTunes · LRCLIB"],
+    live: "https://sonara-ram02krishna.vercel.app/",
+    github: "https://github.com/ram02krishna/sonara",
+  },
+  {
+    file: "nano-url.jsx",
+    title: "nanoURL — Full-Stack URL Shortener with Analytics",
+    bullets: [
+      "Built a full-stack URL shortener with custom aliases and live availability check, link expiry, atomically enforced click limits, an active/disabled toggle, editable links, QR code generation and CSV export.",
+      "Implemented click analytics (browser, OS, device, referrer and geo) with 7/30/90-day ranges, a dashboard overview with traffic charts, and friendly status pages for expired, disabled or limit-reached links.",
+      "Hardened security with JWT auth (7-day expiry), Email OTP verification via Resend, scrypt-hashed link passwords, http(s)-only destinations, Zod request validation, and brute-force limiting on protected links.",
+      "Enforced a free tier of 3 links per device server-side, using PostgreSQL with Drizzle ORM, Docker Compose and serverless deployment on Vercel.",
+    ],
+    tech: ["JavaScript", "React", "Vite", "Tailwind CSS", "Node.js", "Express", "PostgreSQL", "Drizzle ORM", "Zod", "JWT", "Docker"],
+    metricsCmd: "feature_highlights.json",
+    metrics: [
+      ["Scrypt + JWT", "hashed_link_passwords_&_auth"],
+      ["Atomic", "click_limit_enforcement"],
+      ["QR + CSV", "link_sharing_&_exports"],
+    ],
+    flow: ["React UI", "Express REST API", "Zod Validation", "Drizzle / PostgreSQL", "Click Analytics"],
+    live: "https://getnanourl.vercel.app/",
+    github: "https://github.com/ram02krishna/nano-url",
+  },
 ];
 
 export const skills: { title: string; items: string[] }[] = [
   {
     title: "Backend & Auth",
-    items: ["Node.js", "Express.js", "REST APIs", "Socket.io / WebSockets", "WebRTC", "JWT / OAuth 2.0 / Argon2 / Bcrypt"],
+    items: ["Node.js", "Express.js", "REST APIs", "Socket.io / WebSockets", "WebRTC", "JWT / OAuth 2.0 / Argon2 / Bcrypt", "Zod Validation"],
   },
   {
     title: "Databases, Caching & Queues",
-    items: ["PostgreSQL", "Redis & BullMQ", "MongoDB", "Prisma ORM", "Mongoose ODM", "SQL Query Optimization"],
+    items: ["PostgreSQL", "Redis & BullMQ", "MongoDB", "Prisma ORM", "Drizzle ORM", "Mongoose ODM", "SQL Query Optimization"],
   },
   {
     title: "Languages",

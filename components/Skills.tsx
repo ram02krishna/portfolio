@@ -8,10 +8,10 @@ export default function Skills() {
   return (
     <section>
       <SectionHeader id="skills" num="03" name="skills_matrix" sub="Capabilities across the backend, real-time, and cloud stack" />
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid auto-rows-fr gap-6 md:grid-cols-2 lg:grid-cols-3">
         {skills.map((g, idx) => (
           <ScrollReveal key={g.title} delay={idx * 80}>
-            <Window title={`${g.title.toLowerCase().replace(/[^a-z]+/g, "_")}.sh`}>
+            <Window title={`${g.title.toLowerCase().replace(/[^a-z]+/g, "_")}.sh`} className="h-full">
               <h3 className="mb-3 font-mono text-sm text-emerald">{g.title}</h3>
               <div className="flex flex-wrap gap-2">
                 {g.items.map((item) => (

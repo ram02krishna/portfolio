@@ -8,22 +8,22 @@ export default function Achievements() {
   return (
     <section>
       <SectionHeader id="achievements" num="04" name="achievements.log" />
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid auto-rows-fr gap-6 md:grid-cols-3">
         <ScrollReveal delay={100}>
-          <Window title="trophy_01.log">
+          <Window title="trophy_01.log" className="h-full">
             <h3 className="font-mono text-sm text-emerald">2nd Place / Runner-up @ Genathon</h3>
             <p className="cmt mt-1">IIIT Nagpur Flagship National Hackathon</p>
             <p className="mt-3 text-sm text-ink/90">Built and pitched a working QR-based Visitor Management System MVP in a 48-hour sprint.</p>
           </Window>
         </ScrollReveal>
         <ScrollReveal delay={180}>
-          <Window title="qualifier_02.log">
+          <Window title="qualifier_02.log" className="h-full">
             <h3 className="font-mono text-sm text-emerald">Demonstration Round Qualifier @ Adobe University Hackathon</h3>
             <p className="mt-3 text-sm text-ink/90">Cleared competitive coding screens and system design rounds among thousands of competing teams nationwide.</p>
           </Window>
         </ScrollReveal>
         <ScrollReveal delay={260}>
-          <Window title="cp_stats.json" noHoverGlow>
+          <Window title="cp_stats.json" noHoverGlow className="h-full">
             <h3 className="font-mono text-sm text-emerald">Competitive Programming</h3>
             <ul className="mt-3 space-y-2.5 font-mono text-xs sm:text-sm">
               <li>
