@@ -75,8 +75,8 @@ export const projects: Project[] = [
     github: "https://github.com/ram02krishna/quick-connect",
   },
   {
-    file: "spendora-tracker.js",
-    title: "Spendora — Full-Stack MERN Expense & Budget Analytics Tracker",
+    file: "moneymint-tracker.js",
+    title: "MoneyMint — Full-Stack MERN Expense & Budget Analytics Tracker",
     bullets: [
       "Developed a full-stack MERN expense tracker with income/expense logging, category tagging, monthly analytics, and a budget API that validates category budgets against income and reports actual vs. budget.",
       "Integrated Chart.js spending-trend visualizers with formatted Excel (.xlsx) exports via ExcelJS and PDF downloads.",
@@ -90,8 +90,8 @@ export const projects: Project[] = [
       ["Bcrypt + JWT", "rate_limited_auth_security"],
     ],
     flow: ["React UI", "Express REST API", "MongoDB / Mongoose", "Chart.js Analytics", "ExcelJS / PDF Export"],
-    live: "https://spendora-finance.vercel.app/login",
-    github: "https://github.com/ram02krishna/spendora-expense-tracker",
+    live: "https://moneymint-app.vercel.app/",
+    github: "https://github.com/ram02krishna/moneymint",
   },
   {
     file: "sonara-music.tsx",
