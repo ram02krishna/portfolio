@@ -56,8 +56,8 @@ export const projects: Project[] = [
     metricsCmd: "impact_metrics.json",
     metrics: [["1,000", "concurrent_hold_requests"], ["0", "double_bookings & 5xx_errors"], ["66ms", "p95_response_latency"]],
     flow: ["SVG Seat Map", "Prisma Atomic Lock", "Redis/BullMQ 5m Hold", "Socket.io Live Broadcast", "Atomic QR Check-In"],
-    live: "https://event-seat-booking-psi.vercel.app/",
-    github: "https://github.com/ram02krishna/event-seat-booking",
+    live: "https://seatlock-event-seat-booking.vercel.app/",
+    github: "https://github.com/ram02krishna/seat-lock",
   },
   {
     file: "quickconnect-realtime.ts",
