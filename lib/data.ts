@@ -16,8 +16,8 @@ export const stats = [
 ];
 
 export const principles = [
-  ["Concurrency-Safe Architecture", "Atomic SQL updates, Prisma transaction locks, and sorted lock ordering to eliminate race conditions and deadlocks."],
-  ["Low-Latency Real-Time Systems", "Sub-100ms signaling and live state synchronization across clients using Socket.io rooms, Redis, and WebRTC."],
+  ["Concurrency-Safe Architecture", "Atomic SQL updates, Prisma transaction locks, sorted lock ordering, and idempotent checkout to eliminate race conditions, deadlocks and duplicate orders."],
+  ["Low-Latency Real-Time Systems", "Sub-100ms signaling and live state synchronization across clients using Socket.io rooms, Redis presence, and WebRTC."],
   ["Database & Query Optimization", "Profiling slow endpoints, restructuring SQL queries, and leveraging Redis/BullMQ for background job queues."],
   ["Production-First DevOps", "Deploying behind Nginx reverse proxies with PM2 supervision, Docker containers, AWS EC2, and GitHub Actions CI/CD."],
 ];
@@ -48,9 +48,10 @@ export const projects: Project[] = [
     file: "seatlock.ts",
     title: "SeatLock — Concurrency-Safe Ticketing Platform",
     bullets: [
-      "Built a concurrency-safe ticketing platform with an interactive SVG seat map, using atomic conditional SQL updates in Prisma transactions and sorted seat-lock ordering to prevent double bookings and deadlocks.",
-      "Implemented 5-minute seat holds with BullMQ and Redis delayed jobs plus a periodic sweeper to release abandoned carts, pushing live seat updates to all viewers through per-event Socket.io rooms.",
-      "Added role-based access, QR e-tickets via Resend, atomic QR gate check-in, and Docker with GitHub Actions CI.",
+      "Built a concurrency-safe ticketing platform with an interactive SVG seat map, using atomic conditional SQL updates inside Prisma transactions, sorted seat-lock ordering and all-or-nothing rollback to prevent double bookings and deadlocks, with a per-user row lock keeping each customer to one active hold.",
+      "Implemented 5-minute seat holds released by BullMQ/Redis delayed jobs plus a 60-second sweeper, each release a single conditional UPDATE so it can never free a newer hold, and pushed live held/released/sold updates to every viewer through per-event Socket.io rooms.",
+      "Made checkout idempotent with order idempotency keys, marking seats SOLD and issuing random-token QR e-tickets in one transaction, then emailing them via Resend; an atomic check-in UPDATE (WHERE checkedInAt IS NULL) rejects duplicate scans at concurrent gates.",
+      "Added role-based access (customer, organizer, staff) with an organizer console for venue templates with auto-generated seats, event creation, per-tier revenue and capacity stats and staff accounts, plus a camera QR scanner, Redis event-list caching, and Docker with GitHub Actions CI on Postgres and Redis.",
     ],
     tech: ["TypeScript", "Next.js", "React", "Tailwind CSS", "Node.js", "Express", "PostgreSQL", "Prisma ORM", "Redis", "BullMQ", "Socket.io", "Docker"],
     metricsCmd: "impact_metrics.json",
@@ -63,33 +64,31 @@ export const projects: Project[] = [
     file: "quickconnect-realtime.ts",
     title: "QuickConnect — Real-Time Chat & WebRTC Video Platform",
     bullets: [
-      "Built a full-stack real-time chat platform using Socket.io (WebSockets) with 1-on-1 and group chats, delivery/read receipts, typing indicators, soft deletions, and virtualized scrolling for long message histories.",
-      "Implemented WebRTC audio/video calling with 1-on-1 and group-call signaling over Socket.io, screen sharing, a movable floating Picture-in-Picture window, and in-browser voice note recording.",
-      "Secured authentication with JWT (HTTP-only cookies), Argon2 password hashing, and Redis-backed OTP email verification via Resend; added signed Cloudinary uploads, live presence tracking, and API rate limiting.",
+      "Built a full-stack real-time chat platform on Socket.io with 1-on-1 and group chats, per-user sent/delivered/read receipts, typing indicators, message forwarding, delete-for-me/delete-for-everyone, and cursor-paginated history rendered in a virtualized list for long conversations.",
+      "Implemented WebRTC audio/video calling with 1-on-1 and mesh group calls, Socket.io signaling that only relays SDP/ICE between verified call peers, busy/unavailable handling, STUN/TURN config, screen sharing, a floating Picture-in-Picture window and in-browser voice notes.",
+      "Engineered Redis-backed presence derived from live Socket.io socket counts (no stale online state after crashes or redeploys) and a 5-minute membership/contact cache so typing, receipt and call events skip the database.",
+      "Secured the app with JWT in HTTP-only cookies, Argon2id hashing and Redis OTP email verification via Resend (15-minute expiry, 5-attempt cap, resend cooldown), AES-256 encryption of message text and emails at rest, signed Cloudinary uploads, Zod validation, Helmet and failed-attempt rate limiting.",
     ],
     tech: ["TypeScript", "Next.js", "React", "Tailwind CSS", "Node.js", "Express", "PostgreSQL", "Prisma ORM", "Redis", "Socket.io", "WebRTC"],
     metricsCmd: "feature_highlights.json",
-    metrics: [["1:1 & Group", "WebRTC_A/V_Calls"], ["PiP + Screen", "media_streaming"], ["Argon2 + JWT", "auth_security"]],
+    metrics: [["1:1 & Group", "WebRTC_A/V_Calls"], ["Redis", "live_presence_&_membership_cache"], ["Argon2 + AES-256", "auth_&_data_at_rest"]],
     flow: ["Next.js UI", "JWT/Argon2 Auth", "Socket.io Signaling", "WebRTC P2P Stream / Redis Presence"],
     live: "https://quick-connect-chatapp.vercel.app/",
     github: "https://github.com/ram02krishna/quick-connect",
   },
   {
     file: "moneymint-tracker.js",
-    title: "MoneyMint — Full-Stack MERN Expense & Budget Analytics Tracker",
+    title: "MoneyMint — Full-Stack Expense Tracker with Shared Splits & Android App",
     bullets: [
-      "Developed a full-stack MERN expense tracker with income/expense logging, category tagging, monthly analytics, and a budget API that validates category budgets against income and reports actual vs. budget.",
-      "Integrated Chart.js spending-trend visualizers with formatted Excel (.xlsx) exports via ExcelJS and PDF downloads.",
-      "Implemented JWT authentication with bcrypt password hashing, email OTP password recovery via Resend, Cloudinary profile-picture uploads, and Helmet security headers with rate limiting on auth endpoints.",
+      "Developed a full-stack MERN expense tracker with a React (Vite) web app and a React Native (Expo) Android app sharing one Express/MongoDB API, covering income/expense logging, category tagging, monthly analytics, Chart.js and SVG charts, and Excel (ExcelJS) and PDF exports.",
+      "Built a Splitwise-style shared-expense module with groups, equal/exact/percentage/share splits using integer-cent largest-remainder allocation, net balances, simplified repayment suggestions, partial settlements and activity history, membership-checked, kept apart from personal ledgers and covered by unit tests.",
+      "Added a budget API that validates category budgets against income and tracks actual vs. budget with recurring budgets, savings goals with contribution history and monthly targets, and smart insights such as savings rate, daily average and month-end projection.",
+      "Secured the API with JWT auth, bcrypt hashing, Resend email-OTP password recovery, Cloudinary profile uploads, Helmet headers, tiered rate limiting (general, auth, image uploads), request validation and per-user data scoping, deployed serverless on Vercel.",
     ],
-    tech: ["JavaScript", "React", "Tailwind CSS", "Node.js", "Express", "MongoDB", "Mongoose", "Chart.js", "ExcelJS", "JWT", "Cloudinary"],
+    tech: ["JavaScript", "React", "React Native (Expo)", "Vite", "Tailwind CSS", "Node.js", "Express", "MongoDB", "Mongoose", "Chart.js", "ExcelJS", "JWT", "Cloudinary"],
     metricsCmd: "feature_highlights.json",
-    metrics: [
-      ["Chart.js", "spending_trend_visualizer"],
-      ["Excel & PDF", "automated_report_exports"],
-      ["Bcrypt + JWT", "rate_limited_auth_security"],
-    ],
-    flow: ["React UI", "Express REST API", "MongoDB / Mongoose", "Chart.js Analytics", "ExcelJS / PDF Export"],
+    metrics: [["Web + Android", "one_shared_express_api"], ["Integer cents", "exact_split_balances"], ["Excel & PDF", "automated_report_exports"]],
+    flow: ["React / Expo Clients", "Express REST API", "MongoDB / Mongoose", "Split Ledger Engine", "Analytics & Excel / PDF Export"],
     live: "https://moneymint-app.vercel.app/",
     github: "https://github.com/ram02krishna/moneymint",
   },
@@ -138,7 +137,7 @@ export const projects: Project[] = [
 export const skills: { title: string; items: string[] }[] = [
   {
     title: "Backend & Auth",
-    items: ["Node.js", "Express.js", "REST APIs", "Socket.io / WebSockets", "WebRTC", "JWT / OAuth 2.0 / Argon2 / Bcrypt", "Zod Validation"],
+    items: ["Node.js", "Express.js", "REST APIs", "Socket.io / WebSockets", "WebRTC", "JWT / OAuth 2.0 / Argon2 / Bcrypt", "Zod Validation", "Helmet & Rate Limiting"],
   },
   {
     title: "Databases, Caching & Queues",
@@ -150,7 +149,7 @@ export const skills: { title: string; items: string[] }[] = [
   },
   {
     title: "Frontend & UI",
-    items: ["Next.js", "React.js", "Tailwind CSS", "HTML5 & CSS3"],
+    items: ["Next.js", "React.js", "React Native (Expo)", "Vite", "Zustand", "TanStack Query", "Tailwind CSS", "HTML5 & CSS3"],
   },
   {
     title: "Cloud & DevOps",

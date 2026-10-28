@@ -12,12 +12,12 @@ export default function About() {
           <Window title="about_me.md">
             <div className="cmt space-y-1">
               <p>{"// B.Tech in Computer Science & Engineering @ IIIT Nagpur (2023 – Present)"}</p>
-              <p>{"// Focused on distributed locking, real-time WebSockets/WebRTC, and API performance optimization."}</p>
+              <p>{"// Focused on distributed locking, real-time WebSockets/WebRTC, API performance optimization, and full-stack products shipped to web and Android."}</p>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-ink/90">
               I approach backend engineering with rigor: every slow endpoint gets profiled before it gets rewritten, every shared
               resource gets a concurrency strategy before it gets traffic, and every deploy goes through automated CI/CD. I like
-              problems where correctness under load is the whole point — seat locks, delayed jobs, signaling servers.
+              problems where correctness is the whole point — seat locks under load, delayed jobs, signaling servers, and ledgers that balance to the exact cent.
             </p>
             <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-line pt-4">
               {stats.map(([v, l]) => (

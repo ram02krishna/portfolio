@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s | Ram Krishna",
   },
   description:
-    "Portfolio of Ram Krishna, CSE @ IIIT Nagpur. Engineering concurrency-safe backend systems, real-time WebSockets/WebRTC architectures, and automated DevOps deployments.",
+    "Portfolio of Ram Krishna, CSE @ IIIT Nagpur. Engineering concurrency-safe backend systems, real-time WebSockets/WebRTC architectures, full-stack web and Android apps, and automated DevOps deployments.",
   keywords: [
     "Ram Krishna",
     "Backend Engineer",
@@ -31,6 +31,10 @@ export const metadata: Metadata = {
     "Redis",
     "Docker",
     "Next.js",
+    "React Native",
+    "WebRTC",
+    "Socket.io",
+    "BullMQ",
   ],
   authors: [{ name: "Ram Krishna", url: "https://ram02krishna.me" }],
   creator: "Ram Krishna",

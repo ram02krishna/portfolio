@@ -15,7 +15,7 @@ export default function Hero() {
     <section id="top">
       <Window title="ramkrishna — ~/portfolio — zsh — 80×24">
         <div className="space-y-5">
-          <p className="cmt">Last login: Sat Oct 17 2026 on ttys001</p>
+          <p className="cmt">Last login: Wed Oct 28 2026 on ttys001</p>
           <div><Prompt cmd="whoami" /><p className="mt-1 font-mono text-sm text-ink"><span className="text-emerald">→</span> Backend · DevOps · Full-Stack Software Engineer | CSE @ IIIT Nagpur</p></div>
           <div>
             <Prompt cmd="cat welcome.txt" />
@@ -29,6 +29,7 @@ export default function Hero() {
               <p>{"// Computer Science student at IIIT Nagpur building backend systems that hold up under real traffic."}</p>
               <p>{"// Made slow API endpoints 20% faster and managed AWS EC2/Docker deployments during my SDE internship."}</p>
               <p>{"// Engineered a ticketing engine with zero double-bookings under 1,000 concurrent requests & a WebRTC chat platform."}</p>
+              <p>{"// Shipped a Splitwise-style expense tracker with exact-cent splits, serving a web app and an Android app from one API."}</p>
             </div>
           </div>
           <div>
