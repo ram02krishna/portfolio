@@ -1,4 +1,5 @@
-import { ExternalLink, Github, ArrowRight } from "lucide-react";
+import { ExternalLink, ArrowRight } from "lucide-react";
+import { Github } from "./icons/BrandIcons";
 import Window from "./Window";
 import SectionHeader from "./SectionHeader";
 import ScrollReveal from "./ScrollReveal";

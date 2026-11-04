@@ -1,4 +1,5 @@
-import { Github, Linkedin, Code2, Trophy } from "lucide-react";
+import { Code2, Trophy } from "lucide-react";
+import { Github, Linkedin } from "./icons/BrandIcons";
 import Window from "./Window";
 import TypewriterText from "./TypewriterText";
 import { links } from "@/lib/data";
