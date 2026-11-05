@@ -23,12 +23,13 @@ export const principles = [
 ];
 
 export const internship = {
-  role: "Software Development Engineer (SDE) Intern - Backend @ Simphy Softwares Pvt. Ltd.",
+  role: "Software Development Engineer (SDE) Intern – Backend @ Simphy Softwares Pvt. Ltd.",
   when: "Jun 2026 — Aug 2026 | Remote",
   logs: [
-    "Developed and maintained scalable REST APIs using Node.js and Express.js, handling core business logic, input validation, and secure client-server communication.",
-    "Optimized database performance by profiling bottlenecks and restructuring SQL queries, reducing API response times by 20% on heavy endpoints.",
-    "Managed application deployments on AWS EC2 behind an Nginx reverse proxy with PM2 process supervision, setting up automated CI/CD pipelines via GitHub Actions.",
+    "Worked on the backend of Simphy's software, contributing to the server-side codebase as part of the engineering team.",
+    "Wrote and shipped backend code in Node.js and Express.js, building RESTful APIs with core business logic, request validation, and secure client-server communication.",
+    "Cut API response times by 20% on heavy endpoints by profiling database bottlenecks and rewriting slow SQL queries.",
+    "Containerized backend services with Docker and deployed them on AWS EC2 behind an Nginx reverse proxy with PM2 process supervision, automating build and release with GitHub Actions CI/CD pipelines.",
   ],
 };
 
@@ -79,23 +80,6 @@ export const projects: Project[] = [
     github: "https://github.com/ram02krishna/quick-connect",
   },
   {
-    file: "moneymint-tracker.js",
-    title: "MoneyMint — Full-Stack Expense Tracker with Splits",
-    bullets: [
-      "Built a personal finance app that lets users track income and expenses, set category budgets, and set savings goals, with a React web client and an Expo Android app sharing one Express and MongoDB API.",
-      "Added a Splitwise-style group expense feature that handles equal, exact, percentage, share-based and itemized splits, with all amounts stored in integer cents so balances never drift by rounding errors.",
-      "Wrote a debt-simplification routine that reduces who-owes-whom within a group to the fewest payments, making it much easier for friends and roommates to settle up.",
-      "Designed dashboards with Chart.js showing spending by category, monthly income vs. expense trends, and quick insights like savings rate and month-end projection, plus one-click Excel and PDF report downloads.",
-      "Secured the app with JWT and Google sign-in, email OTP verification through Resend for password resets, and rate limiting on public and auth routes, and deployed the API and web client on Vercel.",
-    ],
-    tech: ["JavaScript", "React", "React Native (Expo)", "Vite", "Tailwind CSS", "Node.js", "Express", "MongoDB", "Mongoose", "Chart.js", "ExcelJS", "JWT"],
-    metricsCmd: "feature_highlights.json",
-    metrics: [["Web + Android", "one_shared_express_api"], ["Integer cents", "exact_split_balances"], ["Excel & PDF", "automated_report_exports"]],
-    flow: ["React / Expo Clients", "Express REST API", "MongoDB / Mongoose", "Split Ledger Engine", "Analytics & Excel / PDF Export"],
-    live: "https://moneymint-app.vercel.app/",
-    github: "https://github.com/ram02krishna/moneymint",
-  },
-  {
     file: "sonara-music.tsx",
     title: "Sonara — Full-Stack Music Streaming Platform",
     bullets: [
@@ -115,6 +99,23 @@ export const projects: Project[] = [
     flow: ["Next.js UI", "/api/v1 Proxy", "Go (chi) API", "PostgreSQL / Redis Cache", "Spotify · iTunes · LRCLIB"],
     live: "https://sonara-ram02krishna.vercel.app/",
     github: "https://github.com/ram02krishna/sonara",
+  },
+  {
+    file: "moneymint-tracker.js",
+    title: "MoneyMint — Full-Stack Expense Tracker with Splits",
+    bullets: [
+      "Built a personal finance app that lets users track income and expenses, set category budgets, and set savings goals, with a React web client and an Expo Android app sharing one Express and MongoDB API.",
+      "Added a Splitwise-style group expense feature that handles equal, exact, percentage, share-based and itemized splits, with all amounts stored in integer cents so balances never drift by rounding errors.",
+      "Wrote a debt-simplification routine that reduces who-owes-whom within a group to the fewest payments, making it much easier for friends and roommates to settle up.",
+      "Designed dashboards with Chart.js showing spending by category, monthly income vs. expense trends, and quick insights like savings rate and month-end projection, plus one-click Excel and PDF report downloads.",
+      "Secured the app with JWT and Google sign-in, email OTP verification through Resend for password resets, and rate limiting on public and auth routes, and deployed the API and web client on Vercel.",
+    ],
+    tech: ["JavaScript", "React", "React Native (Expo)", "Vite", "Tailwind CSS", "Node.js", "Express", "MongoDB", "Mongoose", "Chart.js", "ExcelJS", "JWT"],
+    metricsCmd: "feature_highlights.json",
+    metrics: [["Web + Android", "one_shared_express_api"], ["Integer cents", "exact_split_balances"], ["Excel & PDF", "automated_report_exports"]],
+    flow: ["React / Expo Clients", "Express REST API", "MongoDB / Mongoose", "Split Ledger Engine", "Analytics & Excel / PDF Export"],
+    live: "https://moneymint-app.vercel.app/",
+    github: "https://github.com/ram02krishna/moneymint",
   },
   {
     file: "nano-url.jsx",
