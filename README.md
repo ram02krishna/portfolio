@@ -29,7 +29,11 @@ npm install
 
 ### 2. Configure Environment Variables
 
-Create a `.env.local` file in the root directory:
+Create a `.env.local` file in the root directory (or copy `.env.example`):
+
+```bash
+cp .env.example .env.local
+```
 
 ```env
 RESEND_API_KEY=re_your_api_key_here
